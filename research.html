@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="EKRI Research — Browse our full library of peer-reviewed entrepreneurship research reports, policy briefs, and studies."/>
+  <title>Research — EKRI</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    .research-layout{display:grid;grid-template-columns:1fr 300px;gap:40px;align-items:start}
+    .research-grid-main{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+    @media(max-width:1024px){.research-layout{grid-template-columns:1fr}.research-grid-main{grid-template-columns:1fr 1fr}}
+    @media(max-width:640px){.research-grid-main{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- NAVBAR -->
+<header>
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo"><div class="nav-logo-mark">EK</div><span class="nav-logo-text">EK<span>RI</span></span></a>
+        <ul class="nav-links">
+          <li><a href="index.html"    class="nav-link">Home</a></li>
+          <li><a href="about.html"    class="nav-link">About</a></li>
+          <li><a href="research.html" class="nav-link active">Research</a></li>
+          <li><a href="resources.html"class="nav-link">Resources</a></li>
+          <li><a href="news.html"     class="nav-link">News &amp; Events</a></li>
+          <li><a href="index.html#community" class="nav-link">Community</a></li>
+          <li><a href="contact.html"  class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="lang-switch">EN | FR</button>
+          <a href="#" class="btn btn--ghost btn--sm">Login</a>
+          <a href="#" class="btn btn--primary btn--sm">Register</a>
+          <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="nav-drawer" role="dialog" aria-label="Navigation menu">
+    <div class="nav-drawer-inner">
+      <a href="index.html"    class="nav-link">Home</a>
+      <a href="about.html"    class="nav-link">About</a>
+      <a href="research.html" class="nav-link active">Research</a>
+      <a href="resources.html"class="nav-link">Resources</a>
+      <a href="news.html"     class="nav-link">News &amp; Events</a>
+      <a href="contact.html"  class="nav-link">Contact</a>
+      <div class="nav-actions"><button class="lang-switch">EN | FR</button><a href="#" class="btn btn--ghost w-full">Login</a><a href="#" class="btn btn--primary w-full">Register</a></div>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <span class="breadcrumb-item"><a href="index.html">Home</a></span>
+          <span class="breadcrumb-sep">›</span>
+          <span class="breadcrumb-item">Research</span>
+        </nav>
+        <span class="page-hero-label">Research Library</span>
+        <h1 class="page-hero-title">Entrepreneurship Research &amp; Insights</h1>
+        <p class="page-hero-subtitle">Browse 500+ peer-reviewed reports, policy briefs, working papers, and data-driven studies on entrepreneurship, innovation, and ecosystems.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER + CONTENT -->
+  <section class="section">
+    <div class="container">
+      <!-- Filter Bar -->
+      <div class="filter-bar animate-fade-in-up" role="search" aria-label="Research filters">
+        <div class="filter-search" style="flex:2">
+          <input type="search" placeholder="Search research topics, authors, keywords…" aria-label="Search research"/>
+          <button aria-label="Search">🔍</button>
+        </div>
+        <select class="form-select" aria-label="Filter by topic">
+          <option value="">All Topics</option>
+          <option>Women's Entrepreneurship</option>
+          <option>Financing &amp; Capital</option>
+          <option>Innovation &amp; Technology</option>
+          <option>Policy &amp; Ecosystems</option>
+          <option>Social Enterprise</option>
+          <option>Rural &amp; Indigenous</option>
+          <option>Youth Entrepreneurship</option>
+        </select>
+        <select class="form-select" aria-label="Filter by year">
+          <option value="">All Years</option>
+          <option>2025</option>
+          <option>2024</option>
+          <option>2023</option>
+          <option>2022</option>
+          <option>2021</option>
+        </select>
+        <select class="form-select" aria-label="Filter by type">
+          <option value="">All Types</option>
+          <option>Research Report</option>
+          <option>Policy Brief</option>
+          <option>Working Paper</option>
+          <option>Data Study</option>
+          <option>Literature Review</option>
+        </select>
+        <button class="btn btn--primary btn--sm">Apply Filters</button>
+      </div>
+
+      <!-- Layout: Main + Sidebar -->
+      <div class="research-layout">
+        <!-- Research Grid -->
+        <div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;flex-wrap:wrap;gap:12px">
+            <p style="font-size:var(--text-sm);color:var(--color-text-secondary)">Showing <strong>12</strong> of <strong>500+</strong> results</p>
+            <select class="form-select" style="width:auto" aria-label="Sort results">
+              <option>Sort: Most Recent</option>
+              <option>Sort: Most Cited</option>
+              <option>Sort: Most Downloaded</option>
+            </select>
+          </div>
+
+          <div class="research-grid-main">
+            <!-- Cards 1-8 -->
+            <article class="card animate-fade-in-up">
+              <div class="card-img-wrap"><div class="img-placeholder gradient-research"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="rgba(255,255,255,0.8)"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5"/></svg></div></div>
+              <div class="card-body">
+                <div class="card-meta"><span class="badge badge--blue">Policy Brief</span><span style="font-size:var(--text-xs);color:var(--color-text-muted)">Mar 2025</span></div>
+                <h2 class="card-title">Financing Gaps for Women Entrepreneurs in the Digital Economy</h2>
+                <p class="card-excerpt">Examines persistent financing disparities facing women-led ventures across 18 markets with concrete policy interventions.</p>
+                <a href="#" class="card-link">Read Full Report <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </article>
+
+            <article class="card animate-fade-in-up delay-100">
+              <div class="card-img-wrap"><div class="img-placeholder gradient-green"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="rgba(255,255,255,0.8)"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0"/></svg></div></div>
+              <div class="card-body">
+                <div class="card-meta"><span class="badge badge--green">Innovation</span><span style="font-size:var(--text-xs);color:var(--color-text-muted)">Feb 2025</span></div>
+                <h2 class="card-title">AI Adoption Among SMEs: 2025 Landscape Report</h2>
+                <p class="card-excerpt">Surveying 3,000+ SMEs across North America and Europe on adoption rates, barriers, and strategic AI opportunities.</p>
+                <a href="#" class="card-link">Read Full Report <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </article>
+
+            <article class="card animate-fade-in-up">
+              <div class="card-img-wrap"><div class="img-placeholder gradient-purple"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="rgba(255,255,255,0.8)"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72"/></svg></div></div>
+              <div class="card-body">
+                <div class="card-meta"><span class="badge badge--purple">Ecosystem</span><span style="font-size:var(--text-xs);color:var(--color-text-muted)">Jan 2025</span></div>
+                <h2 class="card-title">Building Inclusive Entrepreneurship Ecosystems: 12 City Study</h2>
+                <p class="card-excerpt">Comparative analysis of startup ecosystems identifying structural conditions that enable diverse entrepreneurship to flourish.</p>
+                <a href="#" class="card-link">Read Full Report <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </article>
+
+            <article class="card animate-fade-in-up delay-100">
+              <div class="card-img-wrap"><div class="img-placeholder gradient-event"></div></div>
+              <div class="card-body">
+                <div class="card-meta"><span class="badge badge--orange">Social Enterprise</span><span style="font-size:var(--text-xs);color:var(--color-text-muted)">Dec 2024</span></div>
+                <h2 class="card-title">The Social Return on Entrepreneurship: Measuring Non-Financial Impact</h2>
+                <p class="card-excerpt">Framework and case studies for quantifying the social and community value created by purpose-driven ventures.</p>
+                <a href="#" class="card-link">Read Full Report <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </article>
+
+            <article class="card animate-fade-in-up">
+              <div class="card-img-wrap"><div class="img-placeholder gradient-research"></div></div>
+              <div class="card-body">
+                <div class="card-meta"><span class="badge badge--cyan">Youth</span><span style="font-size:var(--text-xs);color:var(--color-text-muted)">Nov 2024</span></div>
+                <h2 class="card-title">Gen Z Entrepreneurs: Motivations, Challenges &amp; Support Needs</h2>
+                <p class="card-excerpt">National survey of 2,500 youth entrepreneurs aged 18–25 exploring what drives them and what holds them back.</p>
+                <a href="#" class="card-link">Read Full Report <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </article>
+
+            <article class="card animate-fade-in-up delay-100">
+              <div class="card-img-wrap"><div class="img-placeholder gradient-green"></div></div>
+              <div class="card-body">
+                <div class="card-meta"><span class="badge badge--green">Rural</span><span style="font-size:var(--text-xs);color:var(--color-text-muted)">Oct 2024</span></div>
+                <h2 class="card-title">Rural Entrepreneurship: Untapped Potential and Infrastructure Gaps</h2>
+                <p class="card-excerpt">Investigates barriers and opportunities for enterprise development outside major urban centres in 8 high-income countries.</p>
+                <a href="#" class="card-link">Read Full Report <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </article>
+
+            <article class="card animate-fade-in-up">
+              <div class="card-img-wrap"><div class="img-placeholder gradient-purple"></div></div>
+              <div class="card-body">
+                <div class="card-meta"><span class="badge badge--purple">Policy</span><span style="font-size:var(--text-xs);color:var(--color-text-muted)">Sep 2024</span></div>
+                <h2 class="card-title">Government Procurement as an Entrepreneurship Catalyst: Policy Analysis</h2>
+                <p class="card-excerpt">Analyzes how public procurement policies can create market opportunities for small and diverse business owners.</p>
+                <a href="#" class="card-link">Read Full Report <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </article>
+
+            <article class="card animate-fade-in-up delay-100">
+              <div class="card-img-wrap"><div class="img-placeholder gradient-event"></div></div>
+              <div class="card-body">
+                <div class="card-meta"><span class="badge badge--blue">Finance</span><span style="font-size:var(--text-xs);color:var(--color-text-muted)">Aug 2024</span></div>
+                <h2 class="card-title">Venture Capital Diversity Gap: A 10-Year Trend Analysis</h2>
+                <p class="card-excerpt">Longitudinal study tracking representation of women and racialized founders in VC-backed companies from 2014–2024.</p>
+                <a href="#" class="card-link">Read Full Report <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Pagination -->
+          <nav class="pagination" aria-label="Research pagination">
+            <button class="page-btn" aria-label="Previous page">‹</button>
+            <button class="page-btn active" aria-current="page">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">4</button>
+            <span style="color:var(--color-text-muted);font-size:var(--text-sm)">…</span>
+            <button class="page-btn">42</button>
+            <button class="page-btn" aria-label="Next page">›</button>
+          </nav>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar animate-fade-in-up delay-200" aria-label="Research sidebar">
+          <!-- Categories -->
+          <div class="sidebar-widget">
+            <h2 class="sidebar-title">📁 Categories</h2>
+            <div class="category-list">
+              <div class="category-item"><span class="category-name">Women's Entrepreneurship</span><span class="category-count">142</span></div>
+              <div class="category-item"><span class="category-name">Financing &amp; Capital</span><span class="category-count">98</span></div>
+              <div class="category-item"><span class="category-name">Innovation &amp; Tech</span><span class="category-count">87</span></div>
+              <div class="category-item"><span class="category-name">Policy &amp; Ecosystems</span><span class="category-count">74</span></div>
+              <div class="category-item"><span class="category-name">Social Enterprise</span><span class="category-count">56</span></div>
+              <div class="category-item"><span class="category-name">Rural &amp; Indigenous</span><span class="category-count">43</span></div>
+              <div class="category-item"><span class="category-name">Youth Entrepreneurship</span><span class="category-count">38</span></div>
+            </div>
+          </div>
+
+          <!-- Popular Tags -->
+          <div class="sidebar-widget">
+            <h2 class="sidebar-title">🏷️ Popular Tags</h2>
+            <div class="tag-cloud">
+              <span class="tag">Gender Equity</span>
+              <span class="tag">Venture Capital</span>
+              <span class="tag">AI &amp; Tech</span>
+              <span class="tag">Policy</span>
+              <span class="tag">SME</span>
+              <span class="tag">Social Impact</span>
+              <span class="tag">Indigenous</span>
+              <span class="tag">Youth</span>
+              <span class="tag">Rural</span>
+              <span class="tag">Finance</span>
+              <span class="tag">Innovation</span>
+              <span class="tag">Startups</span>
+            </div>
+          </div>
+
+          <!-- Most Downloaded -->
+          <div class="sidebar-widget">
+            <h2 class="sidebar-title">⬇️ Most Downloaded</h2>
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <div style="display:flex;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--color-border)">
+                <div style="width:54px;height:54px;border-radius:var(--radius-md);background:var(--color-primary-light);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:22px">📊</div>
+                <div><p style="font-size:var(--text-xs);font-weight:700;color:var(--color-text-primary);margin-bottom:4px;line-height:1.4">State of Women's Entrepreneurship 2024</p><p style="font-size:11px;color:var(--color-text-muted)">12,400 downloads</p></div>
+              </div>
+              <div style="display:flex;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--color-border)">
+                <div style="width:54px;height:54px;border-radius:var(--radius-md);background:#EDE9FE;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:22px">🌍</div>
+                <div><p style="font-size:var(--text-xs);font-weight:700;color:var(--color-text-primary);margin-bottom:4px;line-height:1.4">Global Startup Ecosystem Index 2024</p><p style="font-size:11px;color:var(--color-text-muted)">9,870 downloads</p></div>
+              </div>
+              <div style="display:flex;gap:12px">
+                <div style="width:54px;height:54px;border-radius:var(--radius-md);background:#D1FAE5;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:22px">💡</div>
+                <div><p style="font-size:var(--text-xs);font-weight:700;color:var(--color-text-primary);margin-bottom:4px;line-height:1.4">AI Adoption Among SMEs 2025</p><p style="font-size:11px;color:var(--color-text-muted)">7,230 downloads</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Newsletter Micro Widget -->
+          <div class="sidebar-widget" style="background:linear-gradient(135deg,var(--color-primary),var(--color-accent));border:none;color:#fff">
+            <p style="font-weight:700;font-size:var(--text-base);margin-bottom:8px">📬 Research Alerts</p>
+            <p style="font-size:var(--text-sm);opacity:.8;margin-bottom:16px">Get notified when new research in your area is published.</p>
+            <form class="newsletter-form" style="flex-direction:column;max-width:none" aria-label="Research alerts subscription">
+              <input type="email" class="form-input" placeholder="Your email…" aria-label="Email for research alerts" required/>
+              <button type="submit" class="btn btn--white btn--sm" style="margin-top:10px;justify-content:center">Sign Up</button>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER (same compact version) -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-logo"><div class="footer-logo-mark">EK</div><span class="footer-logo-text">EKRI</span></div><p class="footer-desc">Empowering entrepreneurs through evidence-based insights globally.</p><div class="social-links"><a href="#" class="social-link">𝕏</a><a href="#" class="social-link">in</a><a href="#" class="social-link">f</a><a href="#" class="social-link">▶</a></div></div>
+      <div><h3 class="footer-col-title">Quick Links</h3><ul class="footer-links"><li><a href="index.html" class="footer-link">→ Home</a></li><li><a href="about.html" class="footer-link">→ About</a></li><li><a href="research.html" class="footer-link">→ Research</a></li><li><a href="resources.html" class="footer-link">→ Resources</a></li><li><a href="news.html" class="footer-link">→ News</a></li><li><a href="contact.html" class="footer-link">→ Contact</a></li></ul></div>
+      <div><h3 class="footer-col-title">Resources</h3><ul class="footer-links"><li><a href="resources.html" class="footer-link">→ Reports</a></li><li><a href="resources.html" class="footer-link">→ Policy Briefs</a></li><li><a href="resources.html" class="footer-link">→ Toolkits</a></li><li><a href="resources.html" class="footer-link">→ Webinars</a></li><li><a href="resources.html" class="footer-link">→ Datasets</a></li></ul></div>
+      <div><h3 class="footer-col-title">Contact</h3><div class="footer-contact-item"><div class="footer-contact-icon">📍</div><div>220 Laurier Ave W, Ottawa ON</div></div><div class="footer-contact-item"><div class="footer-contact-icon">📧</div><div>info@ekri.org</div></div><div class="footer-contact-item"><div class="footer-contact-icon">📞</div><div>+1 (613) 555-1234</div></div></div>
+    </div>
+    <div class="footer-bottom"><p class="footer-bottom-text">© 2025 EKRI. All rights reserved.</p><div class="footer-bottom-links"><a href="#" class="footer-bottom-link">Privacy</a><a href="#" class="footer-bottom-link">Terms</a><a href="#" class="footer-bottom-link">Accessibility</a></div></div>
+  </div>
+</footer>
+<button id="back-to-top" aria-label="Back to top">↑</button>
+<script src="main.js"></script>
+</body>
+</html>

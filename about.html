@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="About EKRI — Our mission, team, history, and values. Learn about the Entrepreneurship Knowledge & Research Institute."/>
+  <title>About Us — EKRI</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    .mission-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
+    .mission-visual { background:linear-gradient(135deg,var(--color-primary),var(--color-accent)); border-radius:var(--radius-xl); aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; font-size:100px; position:relative; overflow:hidden; }
+    .mission-visual::after { content:''; position:absolute; inset:0; background:radial-gradient(circle at 70% 30%, rgba(255,255,255,0.15), transparent 60%); }
+    .about-values-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .team-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+    .about-stat-row { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:48px; }
+    .about-stat-item { text-align:center; padding:28px 20px; background:var(--color-primary-light); border-radius:var(--radius-xl); }
+    .about-stat-num { font-family:var(--font-display); font-size:var(--text-4xl); font-weight:900; color:var(--color-primary); margin-bottom:6px; }
+    .about-stat-lbl { font-size:var(--text-sm); font-weight:600; color:var(--color-text-secondary); }
+    @media(max-width:1024px){.team-grid{grid-template-columns:repeat(2,1fr)}.about-values-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:768px){.mission-grid{grid-template-columns:1fr}.about-values-grid{grid-template-columns:1fr}.team-grid{grid-template-columns:1fr 1fr}.about-stat-row{grid-template-columns:1fr 1fr}}
+    @media(max-width:480px){.team-grid{grid-template-columns:1fr}.about-stat-row{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- NAVBAR -->
+<header>
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo" aria-label="EKRI Home">
+          <div class="nav-logo-mark" aria-hidden="true">EK</div>
+          <span class="nav-logo-text">EK<span>RI</span></span>
+        </a>
+        <ul class="nav-links" role="list">
+          <li><a href="index.html"    class="nav-link">Home</a></li>
+          <li><a href="about.html"    class="nav-link active">About</a></li>
+          <li><a href="research.html" class="nav-link">Research</a></li>
+          <li><a href="resources.html"class="nav-link">Resources</a></li>
+          <li><a href="news.html"     class="nav-link">News &amp; Events</a></li>
+          <li><a href="index.html#community" class="nav-link">Community</a></li>
+          <li><a href="contact.html"  class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="lang-switch">EN | FR</button>
+          <a href="#" class="btn btn--ghost btn--sm">Login</a>
+          <a href="#" class="btn btn--primary btn--sm">Register</a>
+          <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="nav-drawer" id="nav-drawer" role="dialog" aria-label="Navigation menu">
+    <div class="nav-drawer-inner">
+      <a href="index.html"    class="nav-link">Home</a>
+      <a href="about.html"    class="nav-link active">About</a>
+      <a href="research.html" class="nav-link">Research</a>
+      <a href="resources.html"class="nav-link">Resources</a>
+      <a href="news.html"     class="nav-link">News &amp; Events</a>
+      <a href="contact.html"  class="nav-link">Contact</a>
+      <div class="nav-actions">
+        <button class="lang-switch">EN | FR</button>
+        <a href="#" class="btn btn--ghost w-full">Login</a>
+        <a href="#" class="btn btn--primary w-full">Register</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" aria-labelledby="about-hero-title">
+    <div class="container">
+      <div class="page-hero-inner">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <span class="breadcrumb-item"><a href="index.html">Home</a></span>
+          <span class="breadcrumb-sep">›</span>
+          <span class="breadcrumb-item">About</span>
+        </nav>
+        <span class="page-hero-label">Who We Are</span>
+        <h1 class="page-hero-title" id="about-hero-title">Advancing Entrepreneurship<br/>Through Rigorous Research</h1>
+        <p class="page-hero-subtitle">Founded in 2009, EKRI is an independent non-profit research institute dedicated to generating knowledge that empowers entrepreneurs, informs policy, and strengthens ecosystems worldwide.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION & VISION -->
+  <section class="section" aria-labelledby="mission-heading">
+    <div class="container">
+      <div class="mission-grid">
+        <div class="animate-fade-in-up">
+          <span class="section-label">Our Purpose</span>
+          <h2 class="section-title" id="mission-heading" style="text-align:left;margin-bottom:24px">Mission &amp; Vision</h2>
+          <div style="background:var(--color-primary-light);border-left:4px solid var(--color-primary);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:20px 24px;margin-bottom:24px;">
+            <p style="font-size:var(--text-sm);font-weight:700;color:var(--color-primary);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Our Mission</p>
+            <p style="font-size:var(--text-lg);font-weight:600;color:var(--color-text-primary);line-height:1.6">To generate and mobilize knowledge that empowers entrepreneurs, strengthens ecosystems, and shapes inclusive policy globally.</p>
+          </div>
+          <div style="background:var(--color-surface-2);border-left:4px solid var(--color-accent);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:20px 24px;margin-bottom:32px;">
+            <p style="font-size:var(--text-sm);font-weight:700;color:var(--color-accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Our Vision</p>
+            <p style="font-size:var(--text-lg);font-weight:600;color:var(--color-text-primary);line-height:1.6">A world where every entrepreneur — regardless of background — has equal access to the knowledge, networks, and resources they need to thrive.</p>
+          </div>
+          <p style="color:var(--color-text-secondary);line-height:1.8;margin-bottom:28px">EKRI operates at the intersection of academic rigour, practical application, and social impact. We partner with universities, governments, foundations, and civil society organizations to ensure our research drives real-world change.</p>
+          <a href="research.html" class="btn btn--primary">Explore Our Research</a>
+        </div>
+        <div class="mission-visual animate-fade-in-up delay-200">
+          <span style="font-size:80px;position:relative;z-index:1" aria-hidden="true">🔬</span>
+        </div>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="about-stat-row">
+        <div class="about-stat-item animate-fade-in-up">
+          <div class="about-stat-num"><span data-counter="2009" data-suffix="">2009</span></div>
+          <div class="about-stat-lbl">Year Founded</div>
+        </div>
+        <div class="about-stat-item animate-fade-in-up delay-100">
+          <div class="about-stat-num"><span data-counter="48" data-suffix="">48</span></div>
+          <div class="about-stat-lbl">Team Members</div>
+        </div>
+        <div class="about-stat-item animate-fade-in-up delay-200">
+          <div class="about-stat-num"><span data-counter="32" data-suffix="">32</span></div>
+          <div class="about-stat-lbl">Research Partners</div>
+        </div>
+        <div class="about-stat-item animate-fade-in-up delay-300">
+          <div class="about-stat-num"><span data-counter="7" data-suffix="">7</span></div>
+          <div class="about-stat-lbl">Global Offices</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR VALUES -->
+  <section class="section section--surface" aria-labelledby="values-heading">
+    <div class="container">
+      <div class="section-header animate-fade-in-up">
+        <span class="section-label">Our Values</span>
+        <h2 class="section-title" id="values-heading">What Guides Everything We Do</h2>
+      </div>
+      <div class="about-values-grid">
+        <div class="value-card animate-fade-in-up">
+          <div class="value-icon" aria-hidden="true">🎯</div>
+          <h3 class="value-title">Rigorous Evidence</h3>
+          <p class="value-desc">Every insight we publish is grounded in rigorous methodology. We hold ourselves to the highest academic and research standards to ensure our work is credible and actionable.</p>
+        </div>
+        <div class="value-card animate-fade-in-up delay-100">
+          <div class="value-icon" aria-hidden="true">🤝</div>
+          <h3 class="value-title">Inclusion &amp; Equity</h3>
+          <p class="value-desc">We centre the voices and experiences of underrepresented entrepreneurs — women, racialized groups, Indigenous communities, and persons with disabilities.</p>
+        </div>
+        <div class="value-card animate-fade-in-up delay-200">
+          <div class="value-icon" aria-hidden="true">🌍</div>
+          <h3 class="value-title">Global Perspective</h3>
+          <p class="value-desc">Entrepreneurship challenges are global. We bring together insights from diverse geographies to provide nuanced, context-sensitive solutions.</p>
+        </div>
+        <div class="value-card animate-fade-in-up delay-300">
+          <div class="value-icon" aria-hidden="true">⚡</div>
+          <h3 class="value-title">Actionable Impact</h3>
+          <p class="value-desc">Research only matters if it changes reality. We translate findings into policy recommendations, toolkits, and programs that drive real-world outcomes.</p>
+        </div>
+        <div class="value-card animate-fade-in-up delay-100">
+          <div class="value-icon" aria-hidden="true">🔍</div>
+          <h3 class="value-title">Transparency</h3>
+          <p class="value-desc">We openly share our methodologies, data, and findings. Open science and accessible knowledge are fundamental to our approach.</p>
+        </div>
+        <div class="value-card animate-fade-in-up delay-200">
+          <div class="value-icon" aria-hidden="true">🚀</div>
+          <h3 class="value-title">Continuous Innovation</h3>
+          <p class="value-desc">The entrepreneurship landscape evolves rapidly. We continuously update our research methods, platforms, and programs to stay at the frontier.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="section" id="team" aria-labelledby="team-heading">
+    <div class="container">
+      <div class="section-header animate-fade-in-up">
+        <span class="section-label">Our Team</span>
+        <h2 class="section-title" id="team-heading">The Minds Behind EKRI</h2>
+        <p class="section-subtitle">A multidisciplinary team of researchers, economists, policy experts, and community builders united by a shared passion for entrepreneurship.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card animate-fade-in-up">
+          <div class="team-avatar"><div class="img-placeholder gradient-research" style="display:flex;align-items:center;justify-content:center;font-size:36px;width:100%;height:100%">👩🏻</div></div>
+          <p class="team-name">Dr. Sarah Blackwood</p>
+          <p class="team-role">Executive Director</p>
+          <p class="team-bio">Former VP at the Kauffman Foundation with 20+ years in entrepreneurship research and policy development.</p>
+          <div class="team-socials"><a href="#" class="team-social" aria-label="LinkedIn">in</a><a href="#" class="team-social" aria-label="Twitter">𝕏</a></div>
+        </div>
+        <div class="team-card animate-fade-in-up delay-100">
+          <div class="team-avatar"><div class="img-placeholder gradient-green" style="display:flex;align-items:center;justify-content:center;font-size:36px;width:100%;height:100%">👨🏿</div></div>
+          <p class="team-name">Dr. James Amara</p>
+          <p class="team-role">Director of Research</p>
+          <p class="team-bio">PhD from LSE, specializing in innovation economics and inclusive entrepreneurship policy in Sub-Saharan Africa.</p>
+          <div class="team-socials"><a href="#" class="team-social" aria-label="LinkedIn">in</a><a href="#" class="team-social" aria-label="Twitter">𝕏</a></div>
+        </div>
+        <div class="team-card animate-fade-in-up delay-200">
+          <div class="team-avatar"><div class="img-placeholder gradient-purple" style="display:flex;align-items:center;justify-content:center;font-size:36px;width:100%;height:100%">👩🏽</div></div>
+          <p class="team-name">Maya Patel</p>
+          <p class="team-role">Head of Programs</p>
+          <p class="team-bio">Former UNDP senior advisor, leads EKRI's capacity-building programs and community engagement strategy globally.</p>
+          <div class="team-socials"><a href="#" class="team-social" aria-label="LinkedIn">in</a><a href="#" class="team-social" aria-label="Twitter">𝕏</a></div>
+        </div>
+        <div class="team-card animate-fade-in-up delay-300">
+          <div class="team-avatar"><div class="img-placeholder gradient-event" style="display:flex;align-items:center;justify-content:center;font-size:36px;width:100%;height:100%">👨🏻</div></div>
+          <p class="team-name">Luca Rossi</p>
+          <p class="team-role">Chief Data Officer</p>
+          <p class="team-bio">Data scientist and economist specializing in startup ecosystem analytics, machine learning, and research infrastructure.</p>
+          <div class="team-socials"><a href="#" class="team-social" aria-label="LinkedIn">in</a><a href="#" class="team-social" aria-label="Twitter">𝕏</a></div>
+        </div>
+        <div class="team-card animate-fade-in-up">
+          <div class="team-avatar"><div class="img-placeholder gradient-research" style="display:flex;align-items:center;justify-content:center;font-size:36px;width:100%;height:100%">👩🏾</div></div>
+          <p class="team-name">Amina Hassan</p>
+          <p class="team-role">Senior Research Fellow</p>
+          <p class="team-bio">Focuses on women's entrepreneurship, gender equity in financing, and the intersection of culture and enterprise.</p>
+          <div class="team-socials"><a href="#" class="team-social" aria-label="LinkedIn">in</a></div>
+        </div>
+        <div class="team-card animate-fade-in-up delay-100">
+          <div class="team-avatar"><div class="img-placeholder gradient-green" style="display:flex;align-items:center;justify-content:center;font-size:36px;width:100%;height:100%">👨🏻</div></div>
+          <p class="team-name">Tom Kowalski</p>
+          <p class="team-role">Policy Director</p>
+          <p class="team-bio">Former government advisor with expertise in translating academic research into actionable policy frameworks across G7 nations.</p>
+          <div class="team-socials"><a href="#" class="team-social" aria-label="LinkedIn">in</a></div>
+        </div>
+        <div class="team-card animate-fade-in-up delay-200">
+          <div class="team-avatar"><div class="img-placeholder gradient-purple" style="display:flex;align-items:center;justify-content:center;font-size:36px;width:100%;height:100%">👩🏻</div></div>
+          <p class="team-name">Elena Moreau</p>
+          <p class="team-role">Communications Lead</p>
+          <p class="team-bio">Award-winning science communicator who makes complex research accessible and actionable for diverse audiences.</p>
+          <div class="team-socials"><a href="#" class="team-social" aria-label="LinkedIn">in</a></div>
+        </div>
+        <div class="team-card animate-fade-in-up delay-300">
+          <div class="team-avatar"><div class="img-placeholder gradient-event" style="display:flex;align-items:center;justify-content:center;font-size:36px;width:100%;height:100%">👨🏽</div></div>
+          <p class="team-name">Kwame Osei</p>
+          <p class="team-role">Partnerships Manager</p>
+          <p class="team-bio">Builds and manages EKRI's global network of research partners, funders, and ecosystem organizations.</p>
+          <div class="team-socials"><a href="#" class="team-social" aria-label="LinkedIn">in</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORY / TIMELINE -->
+  <section class="section section--surface" aria-labelledby="history-heading">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start" class="timeline-layout">
+        <div class="animate-fade-in-up">
+          <span class="section-label">Our History</span>
+          <h2 class="section-title" id="history-heading" style="text-align:left;margin-bottom:40px">15 Years of Impact</h2>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <p class="timeline-year">2009</p>
+              <h3 class="timeline-title">EKRI Founded</h3>
+              <p class="timeline-desc">Established in Ottawa by a consortium of academics and policy advocates, EKRI began with a mandate to bridge research and entrepreneurship practice.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <p class="timeline-year">2012</p>
+              <h3 class="timeline-title">First Annual Report Published</h3>
+              <p class="timeline-desc">The inaugural State of Entrepreneurship report reached 50,000 readers globally and was cited in 12 national policy documents.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <p class="timeline-year">2015</p>
+              <h3 class="timeline-title">International Expansion</h3>
+              <p class="timeline-desc">Opened regional offices in London, Nairobi, and Singapore, expanding research capacity to cover 6 continents.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <p class="timeline-year">2018</p>
+              <h3 class="timeline-title">Women's Entrepreneurship Focus</h3>
+              <p class="timeline-desc">Launched dedicated Women's Entrepreneurship Research Agenda, committing 40% of annual research budget to gender-focused studies.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <p class="timeline-year">2021</p>
+              <h3 class="timeline-title">Digital Platform Launch</h3>
+              <p class="timeline-desc">Launched EKRI Knowledge Hub, an open-access platform providing free research, toolkits, and data to entrepreneurs worldwide.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <p class="timeline-year">2024</p>
+              <h3 class="timeline-title">10,000 Member Community</h3>
+              <p class="timeline-desc">Reached milestone of 10,000 registered community members from 25+ countries, cementing EKRI's role as a global knowledge hub.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Partners in about page -->
+        <div class="animate-fade-in-up delay-200">
+          <span class="section-label">Partners</span>
+          <h2 class="section-title" style="text-align:left;margin-bottom:32px;font-size:var(--text-3xl)">Institutional Partners</h2>
+          <p style="color:var(--color-text-secondary);margin-bottom:32px;line-height:1.8">We collaborate with world-class academic institutions, international development organizations, and forward-thinking foundations to advance entrepreneurship knowledge.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px">
+            <div class="partner-logo" style="filter:none;height:70px"><span class="partner-logo-text" style="font-size:11px">🌐 UN WOMEN</span></div>
+            <div class="partner-logo" style="filter:none;height:70px"><span class="partner-logo-text" style="font-size:11px">🏛 WORLD BANK</span></div>
+            <div class="partner-logo" style="filter:none;height:70px"><span class="partner-logo-text" style="font-size:11px">🎓 MIT SLOAN</span></div>
+            <div class="partner-logo" style="filter:none;height:70px"><span class="partner-logo-text" style="font-size:11px">💼 OECD</span></div>
+            <div class="partner-logo" style="filter:none;height:70px"><span class="partner-logo-text" style="font-size:11px">🚀 IFC</span></div>
+            <div class="partner-logo" style="filter:none;height:70px"><span class="partner-logo-text" style="font-size:11px">🔬 KAUFFMAN FND</span></div>
+          </div>
+          <a href="contact.html" class="btn btn--outlined">Become a Partner</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="section--blue section--sm">
+    <div class="container">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px">
+        <div>
+          <h2 style="font-family:var(--font-display);font-size:var(--text-3xl);font-weight:800;color:#fff;margin-bottom:8px">Ready to Join Our Community?</h2>
+          <p style="color:rgba(255,255,255,0.8);font-size:var(--text-lg)">Connect with 10,000+ entrepreneurs, researchers, and changemakers.</p>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="#" class="btn btn--white btn--lg">Register Free</a>
+          <a href="contact.html" class="btn btn--outlined" style="border-color:rgba(255,255,255,0.5);color:#fff">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section section--sm">
+    <div class="container">
+      <div class="newsletter-inner animate-fade-in-up">
+        <span class="section-label" style="background:rgba(255,255,255,0.15);color:#fff">Stay Informed</span>
+        <h2 class="newsletter-title">Get the Latest Research Delivered</h2>
+        <p class="newsletter-subtitle">Join 10,000+ entrepreneurs, researchers, and policymakers who receive EKRI's monthly digest.</p>
+        <form class="newsletter-form" aria-label="Newsletter subscription">
+          <input type="email" class="form-input" placeholder="Enter your email address" aria-label="Email address" required/>
+          <button type="submit" class="btn btn--white">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-mark" aria-hidden="true">EK</div>
+          <span class="footer-logo-text">EKRI</span>
+        </div>
+        <p class="footer-desc">The Entrepreneurship Knowledge &amp; Research Institute — empowering entrepreneurs through evidence-based insights globally.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-link" aria-label="Facebook">f</a>
+          <a href="#" class="social-link" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html"    class="footer-link">→ Home</a></li>
+          <li><a href="about.html"    class="footer-link">→ About Us</a></li>
+          <li><a href="research.html" class="footer-link">→ Research</a></li>
+          <li><a href="resources.html"class="footer-link">→ Resources</a></li>
+          <li><a href="news.html"     class="footer-link">→ News &amp; Events</a></li>
+          <li><a href="contact.html"  class="footer-link">→ Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Resources</h3>
+        <ul class="footer-links">
+          <li><a href="resources.html" class="footer-link">→ Research Reports</a></li>
+          <li><a href="resources.html" class="footer-link">→ Policy Briefs</a></li>
+          <li><a href="resources.html" class="footer-link">→ Toolkits</a></li>
+          <li><a href="resources.html" class="footer-link">→ Webinars</a></li>
+          <li><a href="resources.html" class="footer-link">→ Datasets</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-col-title">Contact Us</h3>
+        <div class="footer-contact-item"><div class="footer-contact-icon">📍</div><div>220 Laurier Ave West, Suite 800<br/>Ottawa, ON K1P 5Z9, Canada</div></div>
+        <div class="footer-contact-item"><div class="footer-contact-icon">📧</div><div><a href="mailto:info@ekri.org" class="footer-link" style="display:inline">info@ekri.org</a></div></div>
+        <div class="footer-contact-item"><div class="footer-contact-icon">📞</div><div>+1 (613) 555-1234</div></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-bottom-text">© 2025 Entrepreneurship Knowledge &amp; Research Institute (EKRI). All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#" class="footer-bottom-link">Privacy Policy</a>
+        <a href="#" class="footer-bottom-link">Terms of Use</a>
+        <a href="#" class="footer-bottom-link">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<button id="back-to-top" aria-label="Back to top">↑</button>
+<script src="main.js"></script>
+<style>@media(max-width:768px){.timeline-layout{grid-template-columns:1fr !important}}</style>
+</body>
+</html>

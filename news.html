@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="EKRI News & Events — Latest research launches, thought leadership articles, and upcoming entrepreneurship events."/>
+  <title>News &amp; Events — EKRI</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    .news-layout{display:grid;grid-template-columns:1fr 320px;gap:40px;align-items:start}
+    .featured-article{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-xl);margin-bottom:56px;border:1px solid var(--color-border)}
+    .featured-article-img{min-height:400px;position:relative}
+    .featured-article-body{padding:48px;background:var(--color-bg);display:flex;flex-direction:column;justify-content:center}
+    .featured-label{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--color-primary);background:var(--color-primary-light);padding:4px 12px;border-radius:var(--radius-full);margin-bottom:16px}
+    .featured-title{font-family:var(--font-display);font-size:var(--text-3xl);font-weight:800;color:var(--color-text-primary);line-height:1.2;margin-bottom:16px}
+    .featured-excerpt{font-size:var(--text-base);color:var(--color-text-secondary);line-height:1.8;margin-bottom:28px}
+    .featured-meta{display:flex;align-items:center;gap:16px;font-size:var(--text-sm);color:var(--color-text-muted);margin-bottom:28px}
+    .featured-meta-avatar{width:36px;height:36px;border-radius:50%;background:var(--color-primary-light);display:flex;align-items:center;justify-content:center;font-size:18px}
+    @media(max-width:1024px){.news-layout{grid-template-columns:1fr}.featured-article{grid-template-columns:1fr}}
+    @media(max-width:768px){.featured-article-img{min-height:240px}.featured-article-body{padding:28px}}
+  </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header>
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo"><div class="nav-logo-mark">EK</div><span class="nav-logo-text">EK<span>RI</span></span></a>
+        <ul class="nav-links">
+          <li><a href="index.html"    class="nav-link">Home</a></li>
+          <li><a href="about.html"    class="nav-link">About</a></li>
+          <li><a href="research.html" class="nav-link">Research</a></li>
+          <li><a href="resources.html"class="nav-link">Resources</a></li>
+          <li><a href="news.html"     class="nav-link active">News &amp; Events</a></li>
+          <li><a href="index.html#community" class="nav-link">Community</a></li>
+          <li><a href="contact.html"  class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="lang-switch">EN | FR</button>
+          <a href="#" class="btn btn--ghost btn--sm">Login</a>
+          <a href="#" class="btn btn--primary btn--sm">Register</a>
+          <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="nav-drawer" role="dialog" aria-label="Navigation menu">
+    <div class="nav-drawer-inner">
+      <a href="index.html"    class="nav-link">Home</a>
+      <a href="about.html"    class="nav-link">About</a>
+      <a href="research.html" class="nav-link">Research</a>
+      <a href="resources.html"class="nav-link">Resources</a>
+      <a href="news.html"     class="nav-link active">News &amp; Events</a>
+      <a href="contact.html"  class="nav-link">Contact</a>
+      <div class="nav-actions"><button class="lang-switch">EN | FR</button><a href="#" class="btn btn--ghost w-full">Login</a><a href="#" class="btn btn--primary w-full">Register</a></div>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <span class="breadcrumb-item"><a href="index.html">Home</a></span>
+          <span class="breadcrumb-sep">›</span>
+          <span class="breadcrumb-item">News &amp; Events</span>
+        </nav>
+        <span class="page-hero-label">Latest Updates</span>
+        <h1 class="page-hero-title">News, Stories &amp; Events</h1>
+        <p class="page-hero-subtitle">Stay current with the latest from EKRI — research launches, entrepreneurship sector news, expert perspectives, and upcoming events.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section class="section">
+    <div class="container">
+
+      <!-- Category Filter -->
+      <div class="tabs-bar" role="tablist" style="margin-bottom:48px">
+        <button class="tab-btn active">All</button>
+        <button class="tab-btn">Research News</button>
+        <button class="tab-btn">Events</button>
+        <button class="tab-btn">Partnerships</button>
+        <button class="tab-btn">Community</button>
+        <button class="tab-btn">Thought Leadership</button>
+      </div>
+
+      <!-- Featured Article -->
+      <article class="featured-article animate-fade-in-up" aria-label="Featured article">
+        <div class="featured-article-img gradient-research" style="display:flex;align-items:center;justify-content:center;font-size:80px" aria-hidden="true">📰</div>
+        <div class="featured-article-body">
+          <span class="featured-label">⭐ Featured Story</span>
+          <h2 class="featured-title">EKRI Releases Landmark Study on Indigenous Entrepreneurship Barriers in North America</h2>
+          <div class="featured-meta">
+            <div class="featured-meta-avatar">👩🏻</div>
+            <div>
+              <p style="font-weight:600;color:var(--color-text-primary)">Dr. Sarah Blackwood</p>
+              <p>March 15, 2025 · 8 min read</p>
+            </div>
+          </div>
+          <p class="featured-excerpt">Our most comprehensive study to date unveils systemic gaps in entrepreneurship support infrastructure for Indigenous communities. The research — spanning 3 years and 400 interviews — identifies six structural barriers and provides a concrete 10-point policy framework.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <a href="#" class="btn btn--primary">Read Full Story</a>
+            <a href="#" class="btn btn--ghost">Download Report</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- News Layout: Grid + Sidebar -->
+      <div class="news-layout">
+        <!-- News Grid -->
+        <div>
+          <h2 style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:800;color:var(--color-text-primary);margin-bottom:28px">Latest Stories</h2>
+          <div class="grid-2" style="gap:24px">
+            <!-- 6 News Cards -->
+            <article class="news-card animate-fade-in-up">
+              <div class="news-card-img"><div class="img-placeholder gradient-research" style="height:100%"></div><div class="news-date-badge"><div class="day">15</div><div class="month">Mar</div></div></div>
+              <div class="news-card-body">
+                <div class="card-meta"><span class="badge badge--blue">Research</span></div>
+                <h3 class="news-card-title">EKRI Releases Landmark Indigenous Entrepreneurship Study</h3>
+                <p class="news-card-excerpt">Unveiling systemic gaps and a 10-point policy framework based on 400+ interviews across Canada and the US.</p>
+                <a href="#" class="card-link">Read More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </article>
+
+            <article class="news-card animate-fade-in-up delay-100">
+              <div class="news-card-img"><div class="img-placeholder gradient-news" style="height:100%"></div><div class="news-date-badge"><div class="day">08</div><div class="month">Mar</div></div></div>
+              <div class="news-card-body">
+                <div class="card-meta"><span class="badge badge--purple">Event</span></div>
+                <h3 class="news-card-title">Annual Entrepreneurship Summit 2025: Keynote Speakers Announced</h3>
+                <p class="news-card-excerpt">Join 500+ leaders for 3 days of research presentations, workshops, and networking in Ottawa, June 12–14.</p>
+                <a href="#" class="card-link">Register Now <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </article>
+
+            <article class="news-card animate-fade-in-up">
+              <div class="news-card-img"><div class="img-placeholder gradient-green" style="height:100%"></div><div class="news-date-badge"><div class="day">28</div><div class="month">Feb</div></div></div>
+              <div class="news-card-body">
+                <div class="card-meta"><span class="badge badge--green">Partnership</span></div>
+                <h3 class="news-card-title">EKRI Partners with UN Women on $5M Research Initiative</h3>
+                <p class="news-card-excerpt">A landmark 3-year partnership funding field research and policy advocacy across 10 developing nations.</p>
+                <a href="#" class="card-link">Read More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </article>
+
+            <article class="news-card animate-fade-in-up delay-100">
+              <div class="news-card-img"><div class="img-placeholder gradient-event" style="height:100%"></div><div class="news-date-badge"><div class="day">20</div><div class="month">Feb</div></div></div>
+              <div class="news-card-body">
+                <div class="card-meta"><span class="badge badge--orange">Thought Leadership</span></div>
+                <h3 class="news-card-title">Op-Ed: Why Inclusive Entrepreneurship Policy Is Good Economics</h3>
+                <p class="news-card-excerpt">EKRI Director James Amara argues that diversity in entrepreneurship creates measurable macroeconomic gains.</p>
+                <a href="#" class="card-link">Read More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </article>
+
+            <article class="news-card animate-fade-in-up">
+              <div class="news-card-img"><div class="img-placeholder gradient-purple" style="height:100%"></div><div class="news-date-badge"><div class="day">14</div><div class="month">Feb</div></div></div>
+              <div class="news-card-body">
+                <div class="card-meta"><span class="badge badge--cyan">Community</span></div>
+                <h3 class="news-card-title">EKRI Community Reaches 10,000 Member Milestone</h3>
+                <p class="news-card-excerpt">Celebrating a growing global community of entrepreneurs, researchers, and advocates from 25+ countries.</p>
+                <a href="#" class="card-link">Read More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </article>
+
+            <article class="news-card animate-fade-in-up delay-100">
+              <div class="news-card-img"><div class="img-placeholder gradient-research" style="height:100%"></div><div class="news-date-badge"><div class="day">05</div><div class="month">Feb</div></div></div>
+              <div class="news-card-body">
+                <div class="card-meta"><span class="badge badge--blue">Research</span></div>
+                <h3 class="news-card-title">New Dataset: Decade of Women-Led VC Financing Now Available</h3>
+                <p class="news-card-excerpt">Free download: 10-year longitudinal dataset tracking venture capital in women-founded companies across G20 nations.</p>
+                <a href="#" class="card-link">Read More <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Pagination -->
+          <nav class="pagination" aria-label="News pagination">
+            <button class="page-btn">‹</button>
+            <button class="page-btn active" aria-current="page">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">›</button>
+          </nav>
+        </div>
+
+        <!-- Events Sidebar -->
+        <aside class="sidebar animate-fade-in-up delay-200" aria-label="Upcoming events and categories">
+          <!-- Upcoming Events -->
+          <div class="sidebar-widget">
+            <h2 class="sidebar-title">📅 Upcoming Events</h2>
+            <div>
+              <div class="event-item">
+                <div class="event-date-box"><div class="event-date-day">12</div><div class="event-date-month">Jun</div></div>
+                <div>
+                  <p class="event-info-title">EKRI Annual Summit 2025</p>
+                  <p class="event-info-meta">📍 Ottawa Convention Centre · 3 Days</p>
+                </div>
+              </div>
+              <div class="event-item">
+                <div class="event-date-box"><div class="event-date-day">24</div><div class="event-date-month">Apr</div></div>
+                <div>
+                  <p class="event-info-title">Webinar: AI Tools for Entrepreneurs</p>
+                  <p class="event-info-meta">💻 Online · 90 min</p>
+                </div>
+              </div>
+              <div class="event-item">
+                <div class="event-date-box"><div class="event-date-day">08</div><div class="event-date-month">May</div></div>
+                <div>
+                  <p class="event-info-title">Women's Entrepreneurship Roundtable</p>
+                  <p class="event-info-meta">📍 Toronto, ON · Half Day</p>
+                </div>
+              </div>
+              <div class="event-item">
+                <div class="event-date-box"><div class="event-date-day">19</div><div class="event-date-month">May</div></div>
+                <div>
+                  <p class="event-info-title">Policy Forum: Indigenous Enterprise</p>
+                  <p class="event-info-meta">📍 Vancouver, BC · Full Day</p>
+                </div>
+              </div>
+              <div class="event-item">
+                <div class="event-date-box"><div class="event-date-day">03</div><div class="event-date-month">Jun</div></div>
+                <div>
+                  <p class="event-info-title">Startup Ecosystem Deep Dive Webinar</p>
+                  <p class="event-info-meta">💻 Online · 60 min</p>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top:16px"><a href="#" class="btn btn--outlined btn--sm w-full" style="justify-content:center">View Full Calendar</a></div>
+          </div>
+
+          <!-- Categories -->
+          <div class="sidebar-widget">
+            <h2 class="sidebar-title">📁 News Categories</h2>
+            <div class="category-list">
+              <div class="category-item"><span class="category-name">Research News</span><span class="category-count">64</span></div>
+              <div class="category-item"><span class="category-name">Events</span><span class="category-count">48</span></div>
+              <div class="category-item"><span class="category-name">Partnerships</span><span class="category-count">31</span></div>
+              <div class="category-item"><span class="category-name">Community</span><span class="category-count">27</span></div>
+              <div class="category-item"><span class="category-name">Thought Leadership</span><span class="category-count">22</span></div>
+              <div class="category-item"><span class="category-name">Media Coverage</span><span class="category-count">18</span></div>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="sidebar-widget" style="background:var(--color-primary-light);border-color:var(--color-primary)">
+            <p style="font-weight:700;font-size:var(--text-base);margin-bottom:8px;color:var(--color-primary)">📬 Weekly Digest</p>
+            <p style="font-size:var(--text-sm);color:var(--color-text-secondary);margin-bottom:16px">Get top stories and upcoming events delivered every Monday.</p>
+            <form aria-label="Weekly digest subscription">
+              <input type="email" class="form-input" placeholder="Your email…" aria-label="Email for weekly digest" style="margin-bottom:10px" required/>
+              <button type="submit" class="btn btn--primary btn--sm w-full" style="justify-content:center">Subscribe</button>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER FULL WIDTH -->
+  <section class="newsletter-section section--sm">
+    <div class="container">
+      <div class="newsletter-inner animate-fade-in-up">
+        <span class="section-label" style="background:rgba(255,255,255,0.15);color:#fff">Stay Connected</span>
+        <h2 class="newsletter-title">Never Miss an Update</h2>
+        <p class="newsletter-subtitle">Join 10,000+ people who receive EKRI's monthly research digest and event announcements.</p>
+        <form class="newsletter-form" aria-label="Newsletter subscription">
+          <input type="email" class="form-input" placeholder="Enter your email address" aria-label="Email address" required/>
+          <button type="submit" class="btn btn--white">Subscribe Free</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="footer-logo"><div class="footer-logo-mark">EK</div><span class="footer-logo-text">EKRI</span></div><p class="footer-desc">Empowering entrepreneurs through evidence-based insights globally.</p><div class="social-links"><a href="#" class="social-link">𝕏</a><a href="#" class="social-link">in</a><a href="#" class="social-link">f</a><a href="#" class="social-link">▶</a></div></div>
+      <div><h3 class="footer-col-title">Quick Links</h3><ul class="footer-links"><li><a href="index.html" class="footer-link">→ Home</a></li><li><a href="about.html" class="footer-link">→ About</a></li><li><a href="research.html" class="footer-link">→ Research</a></li><li><a href="resources.html" class="footer-link">→ Resources</a></li><li><a href="news.html" class="footer-link">→ News</a></li><li><a href="contact.html" class="footer-link">→ Contact</a></li></ul></div>
+      <div><h3 class="footer-col-title">Resources</h3><ul class="footer-links"><li><a href="resources.html" class="footer-link">→ Reports</a></li><li><a href="resources.html" class="footer-link">→ Policy Briefs</a></li><li><a href="resources.html" class="footer-link">→ Toolkits</a></li><li><a href="resources.html" class="footer-link">→ Webinars</a></li><li><a href="resources.html" class="footer-link">→ Datasets</a></li></ul></div>
+      <div><h3 class="footer-col-title">Contact</h3><div class="footer-contact-item"><div class="footer-contact-icon">📍</div><div>220 Laurier Ave W, Ottawa ON</div></div><div class="footer-contact-item"><div class="footer-contact-icon">📧</div><div>info@ekri.org</div></div><div class="footer-contact-item"><div class="footer-contact-icon">📞</div><div>+1 (613) 555-1234</div></div></div>
+    </div>
+    <div class="footer-bottom"><p class="footer-bottom-text">© 2025 EKRI. All rights reserved.</p><div class="footer-bottom-links"><a href="#" class="footer-bottom-link">Privacy</a><a href="#" class="footer-bottom-link">Terms</a><a href="#" class="footer-bottom-link">Accessibility</a></div></div>
+  </div>
+</footer>
+<button id="back-to-top" aria-label="Back to top">↑</button>
+<script src="main.js"></script>
+</body>
+</html>

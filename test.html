@@ -1,0 +1,2429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REKH — Women Entrepreneurship Knowledge Hub</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <style>
+        /* ─── DESIGN TOKENS ─────────────────────────────────────── */
+        :root {
+            --ink: #0d0d0d;
+            --cream: #f5f0ea;
+            --rose: #c8475a;
+            --rose-lt: #f0d5da;
+            --white: #ffffff;
+            --muted: #7a7068;
+            --border: rgba(13, 13, 13, .09);
+
+            --ff-display: 'Cormorant Garamond', serif;
+            --ff-body: 'DM Sans', sans-serif;
+
+            --ease: cubic-bezier(.22, .68, 0, 1.2);
+            --rad: 2px;
+        }
+
+        /* ─── RESET / BASE ──────────────────────────────────────── */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: var(--ff-body);
+            background: var(--cream);
+            color: var(--ink);
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* ─── CUSTOM CURSOR ─────────────────────────────────────── */
+        .cursor {
+            width: 10px;
+            height: 10px;
+            background: var(--rose);
+            border-radius: 50%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform .15s var(--ease), opacity .2s;
+        }
+
+        .cursor-ring {
+            width: 36px;
+            height: 36px;
+            border: 1.5px solid var(--rose);
+            border-radius: 50%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9998;
+            transition: transform .35s var(--ease), opacity .2s;
+        }
+
+        /* ─── SCROLLBAR ─────────────────────────────────────────── */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--rose);
+            border-radius: 2px;
+        }
+
+        /* ─── TYPOGRAPHY HELPERS ────────────────────────────────── */
+        .display-serif {
+            font-family: var(--ff-display);
+            font-weight: 300;
+            line-height: 1.05;
+        }
+
+        .accent {
+            color: var(--rose);
+        }
+
+        .text-muted-custom {
+            color: var(--muted);
+            font-size: .92rem;
+        }
+
+        /* ─── BUTTONS ───────────────────────────────────────────── */
+        .btn-rekh {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            font-family: var(--ff-body);
+            font-size: .82rem;
+            font-weight: 600;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            padding: .75rem 1.8rem;
+            border-radius: var(--rad);
+            transition: all .3s var(--ease);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-rekh-primary {
+            background: var(--rose);
+            color: var(--white);
+        }
+
+        .btn-rekh-primary:hover {
+            background: var(--ink);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .btn-rekh-outline {
+            background: transparent;
+            color: var(--ink);
+            border: 1.5px solid var(--ink);
+        }
+
+        .btn-rekh-outline:hover {
+            background: var(--ink);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .btn-rekh-white {
+            background: var(--white);
+            color: var(--ink);
+        }
+
+        .btn-rekh-white:hover {
+            background: var(--rose);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* ─── NAVBAR ────────────────────────────────────────────── */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.4rem 0;
+            transition: background .4s, padding .4s, box-shadow .4s;
+        }
+
+        #navbar.scrolled {
+            background: rgba(245, 240, 234, .95);
+            backdrop-filter: blur(12px);
+            padding: .9rem 0;
+            box-shadow: 0 1px 0 var(--border);
+        }
+
+        .nav-logo {
+            font-family: var(--ff-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: blueviolet;
+            text-decoration: none;
+            letter-spacing: -.02em;
+        }
+
+        .nav-logo span {
+            color: var(--rose);
+        }
+
+        .nav-link-custom {
+            font-size: .8rem;
+            font-weight: 500;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: #c8475a;
+            text-decoration: none;
+            position: relative;
+            padding: .2rem 0;
+            transition: color .25s;
+        }
+
+        .nav-link-custom::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--rose);
+            transition: width .3s var(--ease);
+        }
+
+        .nav-link-custom:hover {
+            color: var(--rose);
+        }
+
+        .nav-link-custom:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 1.5px;
+            background: var(--rose);
+            transition: all .3s;
+        }
+
+        /* ─── HERO ──────────────────────────────────────────────── */
+        #hero {
+            min-height: 100svh;
+            background: var(--ink);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-bg-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: var(--ff-display);
+            font-size: clamp(8rem, 20vw, 22rem);
+            font-weight: 700;
+            color: rgba(255, 255, 255, .03);
+            white-space: nowrap;
+            pointer-events: none;
+            user-select: none;
+            letter-spacing: -.04em;
+        }
+
+        .hero-line {
+            width: 48px;
+            height: 1.5px;
+            background: var(--rose);
+            margin-bottom: 2rem;
+        }
+
+        .hero-title {
+            font-family: var(--ff-display);
+            font-size: clamp(3.2rem, 8vw, 7.5rem);
+            font-weight: 300;
+            line-height: 1;
+            color: var(--white);
+            letter-spacing: -.03em;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--rose);
+        }
+
+        .hero-sub {
+            font-size: .95rem;
+            color: rgba(255, 255, 255, .55);
+            max-width: 420px;
+            line-height: 1.7;
+            margin-top: 1.5rem;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 2.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .5rem;
+            color: rgba(255, 255, 255, .4);
+            font-size: .72rem;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+        }
+
+        .hero-scroll-line {
+            width: 1px;
+            height: 60px;
+            background: linear-gradient(to bottom, rgba(200, 71, 90, .6), transparent);
+            animation: scrollPulse 2s ease infinite;
+        }
+
+        @keyframes scrollPulse {
+
+            0%,
+            100% {
+                opacity: .4;
+                transform: scaleY(1);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scaleY(1.1);
+            }
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: rgba(255, 255, 255, .07);
+            border-radius: var(--rad);
+            overflow: hidden;
+            margin-top: 4rem;
+        }
+
+        .hero-stat {
+            background: rgba(255, 255, 255, .04);
+            padding: 1.8rem 1.5rem;
+            text-align: center;
+        }
+
+        .hero-stat-num {
+            font-family: var(--ff-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--rose);
+            line-height: 1;
+        }
+
+        .hero-stat-label {
+            font-size: .75rem;
+            color: rgba(255, 255, 255, .45);
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            margin-top: .4rem;
+        }
+
+        /* right image panel */
+        .hero-image-panel {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 42%;
+            overflow: hidden;
+        }
+
+        .hero-image-panel::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(to right, var(--ink) 0%, transparent 40%);
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(40%) brightness(.7);
+        }
+
+        .hero-img-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d1a1f 50%, #1a0f12 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-img-placeholder svg {
+            opacity: .15;
+        }
+
+        /* ─── SECTION WRAPPER ───────────────────────────────────── */
+        .section-pad {
+            padding: 7rem 0;
+        }
+
+        .section-label {
+            font-size: .72rem;
+            font-weight: 600;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--rose);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: var(--ff-display);
+            font-size: clamp(2.4rem, 5vw, 4.5rem);
+            font-weight: 300;
+            line-height: 1.05;
+            letter-spacing: -.02em;
+        }
+
+        .divider {
+            width: 40px;
+            height: 2px;
+            background: var(--rose);
+            margin: 1.5rem 0;
+        }
+
+        /* ─── IMPACT ────────────────────────────────────────────── */
+        #impact {
+            background: var(--white);
+        }
+
+        .impact-card {
+            border: 1px solid var(--border);
+            border-radius: var(--rad);
+            padding: 2.5rem 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform .3s var(--ease), box-shadow .3s;
+        }
+
+        .impact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 0;
+            background: var(--rose);
+            transition: height .4s var(--ease);
+        }
+
+        .impact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .07);
+        }
+
+        .impact-card:hover::before {
+            height: 100%;
+        }
+
+        .impact-num {
+            font-family: var(--ff-display);
+            font-size: 3.8rem;
+            font-weight: 700;
+            color: var(--rose);
+            line-height: 1;
+        }
+
+        .impact-desc {
+            font-size: .88rem;
+            color: var(--muted);
+            margin-top: .6rem;
+            line-height: 1.65;
+        }
+
+        /* ─── ABOUT ─────────────────────────────────────────────── */
+        #about {
+            background: var(--cream);
+        }
+
+        .about-img-wrap {
+            position: relative;
+        }
+
+        .about-img-main {
+            width: 100%;
+            aspect-ratio: 4/5;
+            background: linear-gradient(135deg, #c8475a22, #c8475a44);
+            border-radius: var(--rad);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .about-img-main-inner {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(160deg, #1e0d10 0%, #3a1520 40%, #c8475a22 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-badge {
+            position: absolute;
+            bottom: -1.5rem;
+            right: -1.5rem;
+            background: var(--rose);
+            color: var(--white);
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--ff-display);
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.2;
+            animation: badgeSpin 20s linear infinite;
+        }
+
+        @keyframes badgeSpin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .about-body p {
+            color: var(--muted);
+            line-height: 1.8;
+            font-size: .95rem;
+        }
+
+        .tag-pill {
+            display: inline-block;
+            padding: .3rem .9rem;
+            background: var(--rose-lt);
+            color: var(--rose);
+            border-radius: 50px;
+            font-size: .75rem;
+            font-weight: 600;
+            letter-spacing: .06em;
+            margin: .25rem;
+        }
+
+        /* ─── DATA / STATS ──────────────────────────────────────── */
+        #data-section {
+            background: var(--ink);
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1px;
+            background: rgba(255, 255, 255, .06);
+            border-radius: var(--rad);
+            overflow: hidden;
+        }
+
+        .data-cell {
+            background: var(--ink);
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            transition: background .3s;
+        }
+
+        .data-cell:hover {
+            background: rgba(200, 71, 90, .12);
+        }
+
+        .data-big {
+            font-family: var(--ff-display);
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1;
+        }
+
+        .data-big span {
+            color: var(--rose);
+        }
+
+        .data-cell-label {
+            font-size: .78rem;
+            color: rgba(255, 255, 255, .4);
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            margin-top: .8rem;
+        }
+
+        /* ─── NEWS SWIPER ───────────────────────────────────────── */
+        #news {
+            background: var(--cream);
+        }
+
+        .news-card {
+            background: var(--white);
+            border-radius: var(--rad);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: transform .3s var(--ease), box-shadow .3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, .08);
+        }
+
+        .news-card-img {
+            height: 200px;
+            background: linear-gradient(135deg, var(--rose-lt), var(--rose));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .news-card-img-n {
+            font-family: var(--ff-display);
+            font-size: 5rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .25);
+        }
+
+        .news-card-body {
+            padding: 1.6rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-tag {
+            font-size: .7rem;
+            font-weight: 600;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--rose);
+            margin-bottom: .6rem;
+        }
+
+        .news-card-title {
+            font-family: var(--ff-display);
+            font-size: 1.3rem;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--ink);
+        }
+
+        .news-card-body p {
+            font-size: .84rem;
+            color: var(--muted);
+            line-height: 1.7;
+            margin-top: .6rem;
+            flex: 1;
+        }
+
+        .news-card-footer {
+            padding: 1rem 1.6rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .news-date {
+            font-size: .75rem;
+            color: var(--muted);
+        }
+
+        .read-more {
+            font-size: .75rem;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--rose);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: .3rem;
+            transition: gap .2s;
+        }
+
+        .read-more:hover {
+            gap: .6rem;
+            color: var(--rose);
+        }
+
+        /* ─── RESEARCH BAND ─────────────────────────────────────── */
+        #research {
+            background: var(--rose);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #research::before {
+            content: 'RESEARCH';
+            position: absolute;
+            font-family: var(--ff-display);
+            font-size: 18vw;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .07);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        .research-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .research-content .section-label {
+            color: rgba(255, 255, 255, .7);
+        }
+
+        .research-content .section-title {
+            color: var(--white);
+        }
+
+        .research-content p {
+            color: rgba(255, 255, 255, .75);
+            font-size: .95rem;
+            line-height: 1.8;
+        }
+
+        /* ─── NEWSLETTER ────────────────────────────────────────── */
+        #newsletter {
+            background: var(--white);
+        }
+
+        .newsletter-wrap {
+            background: var(--ink);
+            border-radius: 4px;
+            padding: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter-wrap::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(200, 71, 90, .3), transparent 70%);
+            bottom: -100px;
+            right: -50px;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .newsletter-wrap .section-title {
+            color: var(--white);
+        }
+
+        .newsletter-wrap p {
+            color: rgba(255, 255, 255, .5);
+            font-size: .9rem;
+            line-height: 1.7;
+        }
+
+        .nl-form {
+            display: flex;
+            gap: .75rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nl-input {
+            flex: 1;
+            min-width: 220px;
+            background: rgba(255, 255, 255, .07);
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: var(--rad);
+            padding: .9rem 1.2rem;
+            color: var(--white);
+            font-family: var(--ff-body);
+            font-size: .9rem;
+            outline: none;
+            transition: border-color .25s;
+        }
+
+        .nl-input::placeholder {
+            color: rgba(255, 255, 255, .3);
+        }
+
+        .nl-input:focus {
+            border-color: var(--rose);
+        }
+
+        /* ─── FAQ ───────────────────────────────────────────────── */
+        #faq {
+            background: var(--cream);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            font-family: var(--ff-body);
+            font-size: .98rem;
+            font-weight: 500;
+            color: var(--ink);
+            padding: 1.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            cursor: pointer;
+            transition: color .25s;
+        }
+
+        .faq-question:hover {
+            color: var(--rose);
+        }
+
+        .faq-icon {
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
+            border: 1.5px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .85rem;
+            color: var(--muted);
+            transition: all .3s var(--ease);
+        }
+
+        .faq-item.open .faq-icon {
+            background: var(--rose);
+            border-color: var(--rose);
+            color: var(--white);
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .45s var(--ease), padding .3s;
+        }
+
+        .faq-answer-inner {
+            padding-bottom: 1.5rem;
+            font-size: .9rem;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-sidebar {
+            background: var(--rose);
+            border-radius: var(--rad);
+            padding: 3rem 2.5rem;
+            position: sticky;
+            top: 100px;
+            color: var(--white);
+        }
+
+        .faq-sidebar-title {
+            font-family: var(--ff-display);
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        .faq-sidebar p {
+            font-size: .88rem;
+            opacity: .8;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ─── CONTACT ───────────────────────────────────────────── */
+        #contact {
+            background: var(--ink);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-left .section-label {
+            color: rgba(255, 255, 255, .5);
+        }
+
+        .contact-left .section-title {
+            color: var(--white);
+        }
+
+        .contact-left p {
+            color: rgba(255, 255, 255, .45);
+            font-size: .9rem;
+            line-height: 1.8;
+            margin-top: 1rem;
+        }
+
+        .contact-info-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .07);
+        }
+
+        .contact-info-icon {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+            background: rgba(200, 71, 90, .2);
+            border-radius: var(--rad);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--rose);
+            font-size: 1rem;
+        }
+
+        .contact-info-text small {
+            display: block;
+            font-size: .72rem;
+            color: rgba(255, 255, 255, .35);
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            margin-bottom: .2rem;
+        }
+
+        .contact-info-text span {
+            font-size: .9rem;
+            color: rgba(255, 255, 255, .7);
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, .04);
+            border: 1px solid rgba(255, 255, 255, .07);
+            border-radius: 4px;
+            padding: 2.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.4rem;
+        }
+
+        .form-label-custom {
+            display: block;
+            font-size: .72rem;
+            font-weight: 600;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .45);
+            margin-bottom: .5rem;
+        }
+
+        .form-control-custom {
+            width: 100%;
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: var(--rad);
+            padding: .85rem 1rem;
+            color: var(--white);
+            font-family: var(--ff-body);
+            font-size: .9rem;
+            outline: none;
+            transition: border-color .25s, background .25s;
+            resize: none;
+        }
+
+        .form-control-custom::placeholder {
+            color: rgba(255, 255, 255, .2);
+        }
+
+        .form-control-custom:focus {
+            border-color: var(--rose);
+            background: rgba(255, 255, 255, .08);
+        }
+
+        /* ─── SEE IT BE IT ──────────────────────────────────────── */
+        #see-it {
+            background: var(--rose);
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #see-it::before {
+            content: 'BE IT';
+            position: absolute;
+            font-family: var(--ff-display);
+            font-size: 28vw;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .06);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        #see-it .section-title {
+            color: var(--white);
+            position: relative;
+        }
+
+        #see-it p {
+            color: rgba(255, 255, 255, .75);
+            font-size: 1rem;
+            margin-top: 1rem;
+            position: relative;
+        }
+
+        /* ─── FOOTER ────────────────────────────────────────────── */
+        footer {
+            background: #080808;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-logo {
+            font-family: var(--ff-display);
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: -.03em;
+        }
+
+        .footer-logo span {
+            color: var(--rose);
+        }
+
+        footer p {
+            font-size: .83rem;
+            color: rgba(255, 255, 255, .3);
+            line-height: 1.7;
+        }
+
+        .footer-heading {
+            font-size: .72rem;
+            font-weight: 600;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, .35);
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-link {
+            display: block;
+            font-size: .85rem;
+            color: rgba(255, 255, 255, .45);
+            text-decoration: none;
+            margin-bottom: .6rem;
+            transition: color .2s;
+        }
+
+        .footer-link:hover {
+            color: var(--rose);
+        }
+
+        .social-circle {
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(255, 255, 255, .12);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, .4);
+            font-size: .9rem;
+            text-decoration: none;
+            margin-right: .5rem;
+            transition: all .25s;
+        }
+
+        .social-circle:hover {
+            background: var(--rose);
+            border-color: var(--rose);
+            color: var(--white);
+        }
+
+        .footer-bar {
+            border-top: 1px solid rgba(255, 255, 255, .06);
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+        }
+
+        /* ─── MOBILE NAV ────────────────────────────────────────── */
+        .mobile-nav {
+            position: fixed;
+            inset: 0;
+            z-index: 1100;
+            background: var(--ink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 2rem;
+            transform: translateX(100%);
+            transition: transform .5s var(--ease);
+        }
+
+        .mobile-nav.open {
+            transform: translateX(0);
+        }
+
+        .mobile-nav .nav-link-custom {
+            font-size: 1.3rem;
+            color: var(--white);
+        }
+
+        body.mobile-nav-open #navbar .hamburger {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        body.mobile-nav-open {
+            overflow: hidden;
+        }
+
+        /* ─── RESPONSIVE ────────────────────────────────────────── */
+        @media (max-width: 991px) {
+            .hero-image-panel {
+                display: none;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .research-findings-card {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-wrap {
+                padding: 2.5rem 1.8rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .desktop-nav {
+                display: none !important;
+            }
+
+            #about {
+                overflow-x: clip;
+            }
+
+            .about-badge {
+                right: .5rem;
+                bottom: .5rem;
+            }
+        }
+
+        /* ─── PROGRESS BAR ──────────────────────────────────────── */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1001;
+            height: 2px;
+            width: 0;
+            background: var(--rose);
+            transition: width .1s linear;
+        }
+
+        /* ─── BACK TO TOP ───────────────────────────────────────── */
+        #back-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 900;
+            width: 44px;
+            height: 44px;
+            background: var(--rose);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1rem;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(10px);
+            transition: all .3s var(--ease);
+            box-shadow: 0 6px 20px rgba(200, 71, 90, .4);
+        }
+
+        #back-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        #back-top:hover {
+            transform: translateY(-3px);
+            color: var(--white);
+        }
+
+        /* ─── PARTNER MARQUEE ───────────────────────────────────── */
+        .marquee-track {
+            overflow: hidden;
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            background: var(--white);
+        }
+
+        .marquee-inner {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            width: max-content;
+            animation: marqueeScroll 22s linear infinite;
+        }
+
+        .marquee-inner:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes marqueeScroll {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        .partner-name {
+            font-family: var(--ff-display);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--muted);
+            white-space: nowrap;
+            letter-spacing: .04em;
+            transition: color .2s;
+        }
+
+        .partner-name:hover {
+            color: var(--rose);
+        }
+
+        .partner-dot {
+            color: var(--rose);
+            font-size: .6rem;
+        }
+
+        /* ─── EXTRACTED INLINE STYLES ─────────────────────────── */
+        .nav-contact-btn {
+            padding: .55rem 1.4rem;
+            font-size: .75rem;
+        }
+
+        .mobile-close-btn {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .hero-content-wrap {
+            position: relative;
+            z-index: 1;
+            margin-top: 5rem;
+        }
+
+        .hero-content-max {
+            max-width: 660px;
+        }
+
+        .btn-rekh-dark-outline {
+            color: var(--white);
+            border-color: rgba(255, 255, 255, .25);
+        }
+
+        .hero-stat-num-sm {
+            font-size: 2rem;
+        }
+
+        .font-italic {
+            font-style: italic;
+        }
+
+        .text-rose-italic {
+            color: var(--rose);
+            font-style: italic;
+        }
+
+        .impact-intro {
+            color: var(--muted);
+            font-size: .93rem;
+            line-height: 1.8;
+        }
+
+        .impact-suffix {
+            font-size: 1.8rem;
+            color: var(--muted);
+        }
+
+        .impact-suffix-sm {
+            font-size: 1.4rem;
+            color: var(--muted);
+        }
+
+        .about-shape {
+            opacity: .4;
+        }
+
+        .about-since {
+            font-size: .7rem;
+            opacity: .8;
+            letter-spacing: .1em;
+        }
+
+        .section-label-light {
+            color: rgba(255, 255, 255, .5);
+        }
+
+        .section-title-white {
+            color: var(--white);
+        }
+
+        .data-intro {
+            color: rgba(255, 255, 255, .45);
+            font-size: .9rem;
+            line-height: 1.8;
+        }
+
+        .news-card-img-01 {
+            background: linear-gradient(135deg, #f0d5da, #c8475a);
+        }
+
+        .news-card-img-02 {
+            background: linear-gradient(135deg, #1a0f12, #c8475a90);
+        }
+
+        .news-card-img-03 {
+            background: linear-gradient(135deg, #c8475a, #7a2030);
+        }
+
+        .news-card-img-04 {
+            background: linear-gradient(135deg, #ecdde0, #c8475a80);
+        }
+
+        .news-card-img-05 {
+            background: linear-gradient(135deg, #0d0d0d, #c8475a60);
+        }
+
+        .research-divider-light {
+            background: rgba(255, 255, 255, .4);
+        }
+
+        .research-findings-card {
+            background: rgba(255, 255, 255, .1);
+            border-radius: 4px;
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, .15);
+        }
+
+        .research-findings-label {
+            color: rgba(255, 255, 255, .6);
+            font-size: .78rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .research-findings-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .research-findings-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .research-findings-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, .12);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .text-white {
+            color: var(--white);
+        }
+
+        .research-findings-text {
+            margin: 0;
+            color: rgba(255, 255, 255, .75);
+            font-size: .88rem;
+        }
+
+        .newsletter-label {
+            color: rgba(255, 255, 255, .4);
+        }
+
+        .newsletter-title {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+        }
+
+        .newsletter-copy {
+            margin-top: .8rem;
+        }
+
+        .newsletter-success {
+            color: rgba(255, 255, 255, .5);
+            font-size: .82rem;
+            margin-top: .8rem;
+            display: none;
+        }
+
+        .see-it-label {
+            color: rgba(255, 255, 255, .6);
+            position: relative;
+        }
+
+        .see-it-title {
+            font-size: clamp(3rem, 8vw, 7rem);
+        }
+
+        .relative-z {
+            position: relative;
+        }
+
+        .faq-hours {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, .2);
+        }
+
+        .faq-hours-label {
+            font-size: .82rem;
+            opacity: .7;
+            margin-bottom: .5rem;
+        }
+
+        .faq-hours-time {
+            font-size: .9rem;
+            font-weight: 500;
+        }
+
+        .contact-select {
+            appearance: none;
+            cursor: pointer;
+        }
+
+        .contact-select option {
+            background: #111;
+        }
+
+        .contact-success {
+            color: rgba(255, 255, 255, .5);
+            font-size: .82rem;
+            margin-top: .8rem;
+            display: none;
+            text-align: center;
+        }
+
+        .text-rose {
+            color: var(--rose);
+        }
+
+        .footer-intro {
+            max-width: 300px;
+        }
+
+        .footer-sub-copy {
+            font-size: .83rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-sub-input {
+            min-width: 0;
+            flex: 1;
+            font-size: .82rem;
+            padding: .6rem .9rem;
+        }
+
+        .footer-sub-btn {
+            padding: .6rem 1rem;
+            font-size: .72rem;
+        }
+
+        .footer-copy {
+            margin: 0;
+            font-size: .78rem;
+        }
+
+        .footer-legal-link {
+            margin: 0;
+            font-size: .78rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PROGRESS BAR -->
+    <div id="progress-bar"></div>
+
+    <!-- CURSOR -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- BACK TO TOP -->
+    <a href="#hero" id="back-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- ─── NAVBAR ─────────────────────────────────────────── -->
+    <nav id="navbar">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between">
+                <a href="#hero" class="nav-logo">R<span>E</span>KH</a>
+                <div class="d-flex align-items-center gap-4 desktop-nav">
+                    <a href="#about" class="nav-link-custom">About</a>
+                    <a href="#data-section" class="nav-link-custom">Data</a>
+                    <a href="#news" class="nav-link-custom">News</a>
+                    <a href="#research" class="nav-link-custom">Research</a>
+                    <a href="#faq" class="nav-link-custom">FAQ</a>
+                    <a href="#contact" class="btn-rekh btn-rekh-primary nav-contact-btn">Contact</a>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MOBILE NAV -->
+    <div class="mobile-nav" id="mobileNav">
+        <button id="closeNav" class="mobile-close-btn"><i class="bi bi-x-lg"></i></button>
+        <a href="#about" class="nav-link-custom" onclick="closeMobileNav()">About</a>
+        <a href="#data-section" class="nav-link-custom" onclick="closeMobileNav()">Data</a>
+        <a href="#news" class="nav-link-custom" onclick="closeMobileNav()">News</a>
+        <a href="#research" class="nav-link-custom" onclick="closeMobileNav()">Research</a>
+        <a href="#faq" class="nav-link-custom" onclick="closeMobileNav()">FAQ</a>
+        <a href="#contact" class="nav-link-custom" onclick="closeMobileNav()">Contact</a>
+    </div>
+
+    <!-- ─── HERO ───────────────────────────────────────────── -->
+    <section id="hero">
+        <div class="hero-bg-text">REKH</div>
+
+        <!-- right image panel -->
+        <div class="hero-image-panel">
+            <div class="hero-img-placeholder">
+                <svg width="200" height="200" viewBox="0 0 200 200" fill="none">
+                    <circle cx="100" cy="80" r="40" stroke="white" stroke-width="1.5" />
+                    <path d="M40 180 C40 140 160 140 160 180" stroke="white" stroke-width="1.5" />
+                    <circle cx="100" cy="100" r="90" stroke="white" stroke-width=".5" stroke-dasharray="4 6" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="container hero-content-wrap">
+            <div class="hero-content-max">
+                <!-- <div class="hero-line" data-aos="fade-right" data-aos-duration="600"></div> -->
+                <!-- <p class="section-label" data-aos="fade-up" data-aos-delay="100">Est. 2018 · Canada</p> -->
+                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
+                    Women<br><em>Powering</em><br>the Economy
+                </h1>
+                <p class="hero-sub" data-aos="fade-up" data-aos-delay="350">
+                    REKH is Canada's national research and knowledge platform advancing women entrepreneurs through
+                    data, policy, and intersectional strategy.
+                </p>
+                <div class="d-flex flex-wrap gap-3 mt-4" data-aos="fade-up" data-aos-delay="450">
+                    <a href="#about" class="btn-rekh btn-rekh-primary">Explore REKH <i
+                            class="bi bi-arrow-right"></i></a>
+                    <a href="#research" class="btn-rekh btn-rekh-outline btn-rekh-dark-outline">Read Report</a>
+                </div>
+
+                <div class="hero-stats" data-aos="fade-up" data-aos-delay="550">
+                    <div class="hero-stat">
+                        <div class="hero-stat-num counter" data-target="20">0</div>
+                        <div class="hero-stat-label">% Women-owned Businesses</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-num hero-stat-num-sm">1M+</div>
+                        <div class="hero-stat-label">Jobs Supported</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-num counter" data-target="77">0</div>
+                        <div class="hero-stat-label">% OECD Lead</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <div class="hero-scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- ─── MARQUEE PARTNERS ───────────────────────────────── -->
+    <div class="marquee-track">
+        <div class="marquee-inner">
+            <span class="partner-name">Diversity Institute</span>
+            <span class="partner-dot">●</span>
+            <span class="partner-name">Future Skills Centre</span>
+            <span class="partner-dot">●</span>
+            <span class="partner-name">Government of Canada</span>
+            <span class="partner-dot">●</span>
+            <span class="partner-name">W20 South Africa</span>
+            <span class="partner-dot">●</span>
+            <span class="partner-name">BDC</span>
+            <span class="partner-dot">●</span>
+            <span class="partner-name">TMU</span>
+            <span class="partner-dot">●</span>
+            <span class="partner-name">Export Development Canada</span>
+            <span class="partner-dot">●</span>
+            <!-- duplicate for seamless loop -->
+            <span class="partner-name">Diversity Institute</span>
+            <span class="partner-dot">●</span>
+            <span class="partner-name">Future Skills Centre</span>
+            <span class="partner-dot">●</span>
+            <span class="partner-name">Government of Canada</span>
+            <span class="partner-dot">●</span>
+            <span class="partner-name">W20 South Africa</span>
+            <span class="partner-dot">●</span>
+            <span class="partner-name">BDC</span>
+            <span class="partner-dot">●</span>
+            <span class="partner-name">TMU</span>
+            <span class="partner-dot">●</span>
+            <span class="partner-name">Export Development Canada</span>
+            <span class="partner-dot">●</span>
+        </div>
+    </div>
+
+    <!-- ─── IMPACT ─────────────────────────────────────────── -->
+    <section id="impact" class="section-pad">
+        <div class="container">
+            <div class="row align-items-end mb-5">
+                <div class="col-lg-6" data-aos="fade-up">
+                    <p class="section-label">Our Impact</p>
+                    <h2 class="section-title">Why Women<br>Entrepreneurs <em class="text-rose-italic">Matter</em></h2>
+                    <div class="divider"></div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+                    <p class="impact-intro">
+                        Women-owned businesses anchor 1 in 5 Canadian enterprises, supporting over 1 million jobs and
+                        contributing $100 billion to GDP. REKH advocates for evidence-based strategies that ensure women
+                        entrepreneurs drive growth, innovation, and sustainability.
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+                    <div class="impact-card">
+                        <div class="impact-num">20<span class="impact-suffix">%</span></div>
+                        <p class="impact-desc">of all Canadian businesses are majority women-owned, anchoring
+                            communities coast to coast.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="impact-card">
+                        <div class="impact-num">1M<span class="impact-suffix">+</span></div>
+                        <p class="impact-desc">Canadians employed by majority women-owned SMEs, making them vital
+                            economic contributors.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="impact-card">
+                        <div class="impact-num">$100<span class="impact-suffix-sm">B</span></div>
+                        <p class="impact-desc">in annual GDP contribution from women-owned enterprises, fuelling
+                            national prosperity.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="impact-card">
+                        <div class="impact-num">77<span class="impact-suffix">%</span></div>
+                        <p class="impact-desc">of women owners of SMEs report they have the skills to go further than
+                            the OECD average.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── ABOUT ───────────────────────────────────────────── -->
+    <section id="about" class="section-pad">
+        <div class="container">
+            <div class="row align-items-center g-3">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="about-img-wrap">
+                        <div class="about-img-main">
+                            <div class="about-img-main-inner">
+                                <svg width="180" height="180" viewBox="0 0 180 180" fill="none" class="about-shape">
+                                    <path d="M90 20 L160 160 L20 160 Z" stroke="#c8475a" stroke-width="1" fill="none" />
+                                    <circle cx="90" cy="90" r="60" stroke="#c8475a" stroke-width=".5"
+                                        stroke-dasharray="3 5" />
+                                    <circle cx="90" cy="90" r="30" stroke="rgba(200,71,90,.5)" stroke-width="1" />
+                                    <circle cx="90" cy="90" r="5" fill="#c8475a" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="about-badge">
+                            <span class="about-since">SINCE</span>
+                            <span>2018</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left" data-aos-delay="150">
+                    <div class="about-body">
+                        <p class="section-label">About REKH</p>
+                        <h2 class="section-title">The Hub That<br>Moves the <em class="text-rose-italic">Needle</em>
+                        </h2>
+                        <div class="divider"></div>
+                        <p>REKH is a national, networked, and accessible digital platform for cutting-edge research,
+                            resources, and leading strategies to support women entrepreneurs across Canada.</p>
+                        <p class="mt-3">Each year, REKH publishes the <em>State of Women's Entrepreneurship in
+                                Canada</em> report — the only annual synthesis of new research to inform policy and
+                            practice, using an intersectional lens.</p>
+                        <div class="mt-4">
+                            <span class="tag-pill">Research</span>
+                            <span class="tag-pill">Policy Advocacy</span>
+                            <span class="tag-pill">Intersectional</span>
+                            <span class="tag-pill">SME Growth</span>
+                            <span class="tag-pill">Leadership</span>
+                            <span class="tag-pill">Innovation</span>
+                        </div>
+                        <a href="#research" class="btn-rekh btn-rekh-primary mt-4">Read the 2025 Report <i
+                                class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── DATA STATS ─────────────────────────────────────── -->
+    <section id="data-section" class="section-pad">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-6" data-aos="fade-up">
+                    <p class="section-label section-label-light">Explore Data</p>
+                    <h2 class="section-title section-title-white">Numbers That<br><em class="text-rose-italic">Tell the
+                            Story</em></h2>
+                    <div class="divider"></div>
+                    <p class="data-intro">Find data on women entrepreneurs across Canada's provinces, industries, and
+                        intersecting identities.</p>
+                    <a href="#" class="btn-rekh btn-rekh-outline btn-rekh-dark-outline mt-3">Explore All Data <i
+                            class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="data-grid" data-aos="fade-up" data-aos-delay="100">
+                <div class="data-cell">
+                    <div class="data-big"><span>20</span>%</div>
+                    <div class="data-cell-label">Canadian businesses are majority women-owned</div>
+                </div>
+                <div class="data-cell">
+                    <div class="data-big">1<span>M</span></div>
+                    <div class="data-cell-label">People employed by women-owned SMEs</div>
+                </div>
+                <div class="data-cell">
+                    <div class="data-big"><span>$100</span>B</div>
+                    <div class="data-cell-label">Annual GDP contribution</div>
+                </div>
+                <div class="data-cell">
+                    <div class="data-big"><span>77</span>%</div>
+                    <div class="data-cell-label">Owners report skills above OECD average</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── NEWS SWIPER ────────────────────────────────────── -->
+    <section id="news" class="section-pad">
+        <div class="container">
+            <div class="d-flex align-items-end justify-content-between mb-5 flex-wrap gap-3">
+                <div data-aos="fade-up">
+                    <p class="section-label">Explore News</p>
+                    <h2 class="section-title">Latest from<br><em class="text-rose-italic">REKH</em></h2>
+                </div>
+                <a href="#" class="btn-rekh btn-rekh-outline" data-aos="fade-up" data-aos-delay="100">All News <i
+                        class="bi bi-arrow-right"></i></a>
+            </div>
+
+            <div class="swiper newsSwiper" data-aos="fade-up" data-aos-delay="150">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="news-card">
+                            <div class="news-card-img news-card-img-01">
+                                <span class="news-card-img-n">01</span>
+                            </div>
+                            <div class="news-card-body">
+                                <span class="news-tag">Leadership</span>
+                                <h3 class="news-card-title">Diversity Institute Appoints Ulrike Bahr-Gedalia</h3>
+                                <p>The Diversity Institution at the Ted Rogers School of Management is pleased to
+                                    welcome our newest fellow.</p>
+                            </div>
+                            <div class="news-card-footer">
+                                <span class="news-date">Feb 15, 2025</span>
+                                <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="news-card">
+                            <div class="news-card-img news-card-img-02">
+                                <span class="news-card-img-n">02</span>
+                            </div>
+                            <div class="news-card-body">
+                                <span class="news-tag">Global</span>
+                                <h3 class="news-card-title">W20 Calls to Action Heard by G20 Leaders</h3>
+                                <p>The Group of Twenty adopted several recommendations on women's economic empowerment
+                                    during the annual summit.</p>
+                            </div>
+                            <div class="news-card-footer">
+                                <span class="news-date">Jan 28, 2025</span>
+                                <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="news-card">
+                            <div class="news-card-img news-card-img-03">
+                                <span class="news-card-img-n">03</span>
+                            </div>
+                            <div class="news-card-body">
+                                <span class="news-tag">Policy</span>
+                                <h3 class="news-card-title">REKH's Post-Budget Dialogue Showcases National Perspectives
+                                </h3>
+                                <p>On November 15, researchers, founders and entrepreneurs from across Canada gathered
+                                    for a national post-budget dialogue.</p>
+                            </div>
+                            <div class="news-card-footer">
+                                <span class="news-date">Nov 15, 2024</span>
+                                <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="news-card">
+                            <div class="news-card-img news-card-img-04">
+                                <span class="news-card-img-n">04</span>
+                            </div>
+                            <div class="news-card-body">
+                                <span class="news-tag">Research</span>
+                                <h3 class="news-card-title">State of Women's Entrepreneurship in Canada 2025</h3>
+                                <p>The flagship annual report synthesizes the most comprehensive picture of women-owned
+                                    businesses in Canada.</p>
+                            </div>
+                            <div class="news-card-footer">
+                                <span class="news-date">Oct 3, 2024</span>
+                                <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="news-card">
+                            <div class="news-card-img news-card-img-05">
+                                <span class="news-card-img-n">05</span>
+                            </div>
+                            <div class="news-card-body">
+                                <span class="news-tag">Events</span>
+                                <h3 class="news-card-title">Women Powering Canada's Prosperity — Budget 2025 Snapshot
+                                </h3>
+                                <p>REKH's annual budget analysis examines what recent federal commitments mean for
+                                    women-owned businesses.</p>
+                            </div>
+                            <div class="news-card-footer">
+                                <span class="news-date">Sep 10, 2024</span>
+                                <a href="#" class="read-more">Read More <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination mt-4"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── RESEARCH BAND ──────────────────────────────────── -->
+    <section id="research" class="section-pad">
+        <div class="container research-content">
+            <div class="row align-items-center g-3">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <p class="section-label">Annual Report</p>
+                    <h2 class="section-title">State of Women's<br>Entrepreneurship<br>in Canada <em
+                            class="font-italic">2025</em></h2>
+                    <div class="divider research-divider-light"></div>
+                    <p>Our annual State of Women's Entrepreneurship (SOWE) report is a go-to resource for the most
+                        complete picture of research on women's entrepreneurship in Canada. It tackles barriers,
+                        enablers, and progress with an intersectional lens.</p>
+                    <a href="#" class="btn-rekh btn-rekh-white mt-4">Download Report <i class="bi bi-download"></i></a>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+                    <div class="research-findings-card">
+                        <p class="research-findings-label">Key Findings 2025</p>
+                        <div class="research-findings-list">
+                            <div class="research-findings-item">
+                                <div class="research-findings-icon"><i class="bi bi-check2 text-white"></i></div>
+                                <p class="research-findings-text">Intersectionality gaps persist across race, age, and
+                                    geography</p>
+                            </div>
+                            <div class="research-findings-item">
+                                <div class="research-findings-icon"><i class="bi bi-check2 text-white"></i></div>
+                                <p class="research-findings-text">Access to capital remains the #1 barrier for
+                                    growth-stage firms</p>
+                            </div>
+                            <div class="research-findings-item">
+                                <div class="research-findings-icon"><i class="bi bi-check2 text-white"></i></div>
+                                <p class="research-findings-text">Digital adoption closes productivity gap in remote
+                                    regions</p>
+                            </div>
+                            <div class="research-findings-item">
+                                <div class="research-findings-icon"><i class="bi bi-check2 text-white"></i></div>
+                                <p class="research-findings-text">Mentorship programs show 2× acceleration in revenue
+                                    growth</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── NEWSLETTER ─────────────────────────────────────── -->
+    <section id="newsletter" class="section-pad">
+        <div class="container">
+            <div class="newsletter-wrap" data-aos="fade-up">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-4">
+                        <p class="section-label newsletter-label">Stay Connected</p>
+                        <h2 class="section-title newsletter-title">Join Our<br><em class="text-rose-italic">Mailing
+                                List</em></h2>
+                        <p class="newsletter-copy">Stay up-to-date on research, events, and initiatives from REKH.
+                            Unsubscribe any time.</p>
+                    </div>
+                    <div class="col-lg-8">
+                        <form class="nl-form" onsubmit="handleSubscribe(event)">
+                            <input type="text" class="nl-input" placeholder="Your full name" required />
+                            <input type="email" class="nl-input" placeholder="Your email address" required />
+                            <button type="submit" class="btn-rekh btn-rekh-primary">Subscribe <i
+                                    class="bi bi-send"></i></button>
+                        </form>
+                        <p id="nl-success" class="newsletter-success"><i class="bi bi-check-circle-fill text-rose"></i>
+                            You're subscribed! Welcome to REKH.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── SEE IT BE IT ───────────────────────────────────── -->
+    <section id="see-it">
+        <div class="container">
+            <p class="section-label see-it-label" data-aos="fade-up">See It. Be It.</p>
+            <h2 class="section-title display-serif see-it-title" data-aos="fade-up" data-aos-delay="100">
+                Women need to see<br>successful entrepreneurs<br>so they can <em>dare to become one.</em>
+            </h2>
+            <div class="mt-4 relative-z" data-aos="fade-up" data-aos-delay="200">
+                <a href="#" class="btn-rekh btn-rekh-white">View the Database <i class="bi bi-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── FAQ ────────────────────────────────────────────── -->
+    <section id="faq" class="section-pad">
+        <div class="container">
+            <div class="row g-3">
+                <div class="col-lg-4 align-self-start">
+                    <div class="faq-sidebar">
+                        <p class="faq-sidebar-title">Have a Question?</p>
+                        <p>Browse our frequently asked questions below, or reach out to our team directly — we're here
+                            to help.</p>
+                        <a href="#contact" class="btn-rekh btn-rekh-white">Contact Us <i
+                                class="bi bi-arrow-right"></i></a>
+                        <div class="faq-hours">
+                            <p class="faq-hours-label">Office Hours</p>
+                            <p class="faq-hours-time">Mon – Fri, 9am – 5pm ET</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8" data-aos="fade-left" data-aos-delay="100">
+                    <p class="section-label">FAQ</p>
+                    <h2 class="section-title mb-4">Frequently Asked<br><em class="text-rose-italic">Questions</em></h2>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            What is REKH and who is it for?
+                            <span class="faq-icon"><i class="bi bi-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">REKH — the Women Entrepreneurship Knowledge Hub — is Canada's
+                                national platform providing cutting-edge research, resources, and strategies for anyone
+                                working to support women entrepreneurs: policy makers, funders, educators, business
+                                support organizations, and entrepreneurs themselves.</div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            How often is new research published?
+                            <span class="faq-icon"><i class="bi bi-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">REKH publishes its flagship State of Women's Entrepreneurship
+                                in Canada (SOWE) report annually each October. In addition, we release policy briefs,
+                                data spotlights, and research summaries throughout the year on emerging topics like
+                                intersectionality, access to capital, and regional equity.</div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            Can I use REKH data in my own research or reports?
+                            <span class="faq-icon"><i class="bi bi-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">Yes. All REKH publications and datasets are freely available
+                                for use with proper attribution. Please cite the source as "REKH — Women
+                                Entrepreneurship Knowledge Hub" along with the year and publication name. For bulk data
+                                requests or partnership inquiries, please contact us directly.</div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            How can my organization partner with REKH?
+                            <span class="faq-icon"><i class="bi bi-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">We welcome partnerships with academic institutions, government
+                                bodies, industry associations, and non-profits committed to advancing women's
+                                entrepreneurship. Partnerships can involve co-research, event collaboration, data
+                                sharing, or capacity building. Reach out via our contact form and we'll set up an
+                                exploratory call.</div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            Is REKH only focused on Canada?
+                            <span class="faq-icon"><i class="bi bi-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">Our primary mandate covers Canada, but REKH actively
+                                participates in global forums including the G20 Women (W20) and maintains research
+                                partnerships with international organizations. Our intersectional framework and policy
+                                tools are designed to be adaptable to other national contexts.</div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            How do I access the See It. Be It. database?
+                            <span class="faq-icon"><i class="bi bi-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">The See It. Be It. database is freely accessible on our
+                                website. It features profiles of successful Canadian women entrepreneurs across
+                                industries and regions, serving as a powerful inspiration tool. You can filter by
+                                sector, province, or identity to find role models that resonate with your community.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFaq(this)">
+                            How do I sign up for REKH newsletters and events?
+                            <span class="faq-icon"><i class="bi bi-plus"></i></span>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">Use the mailing list form on this page to subscribe to REKH
+                                updates. You'll receive research releases, event invitations, policy summaries, and
+                                spotlights on women entrepreneurs. You can unsubscribe at any time with one click.</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── CONTACT ─────────────────────────────────────────── -->
+    <section id="contact" class="section-pad">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-left" data-aos="fade-right">
+                    <p class="section-label">Get in Touch</p>
+                    <h2 class="section-title section-title-white">Let's Start a<br><em
+                            class="text-rose-italic">Conversation</em></h2>
+                    <div class="divider"></div>
+                    <p>Whether you're a researcher, policy maker, entrepreneur, or partner — we'd love to hear from you.
+                        REKH is built on collaboration.</p>
+
+                    <div class="mt-4">
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon"><i class="bi bi-geo-alt"></i></div>
+                            <div class="contact-info-text">
+                                <small>Address</small>
+                                <span>245 Yonge Street, Suite 800<br>Toronto, Ontario, M5B 2K7</span>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon"><i class="bi bi-envelope"></i></div>
+                            <div class="contact-info-text">
+                                <small>Email</small>
+                                <span>info@rekh.ca</span>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon"><i class="bi bi-telephone"></i></div>
+                            <div class="contact-info-text">
+                                <small>Phone</small>
+                                <span>+1 (416) 979-5000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <a href="#" class="social-circle"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-circle"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-circle"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="social-circle"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form" data-aos="fade-left" data-aos-delay="150">
+                    <form onsubmit="handleContact(event)">
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="form-label-custom">First Name</label>
+                                    <input type="text" class="form-control-custom" placeholder="Jane" required />
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label class="form-label-custom">Last Name</label>
+                                    <input type="text" class="form-control-custom" placeholder="Smith" required />
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label-custom">Email</label>
+                                    <input type="email" class="form-control-custom" placeholder="jane@example.com"
+                                        required />
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label-custom">Organization</label>
+                                    <input type="text" class="form-control-custom"
+                                        placeholder="Your company or institution" />
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label-custom">Subject</label>
+                                    <select class="form-control-custom contact-select">
+                                        <option value="">Select a topic</option>
+                                        <option>Research Inquiry</option>
+                                        <option>Partnership Opportunity</option>
+                                        <option>Media & Press</option>
+                                        <option>General Inquiry</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label-custom">Message</label>
+                                    <textarea class="form-control-custom" rows="5"
+                                        placeholder="Tell us how we can help..." required></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn-rekh btn-rekh-primary w-100 justify-content-center">
+                                    Send Message <i class="bi bi-send"></i>
+                                </button>
+                                <p id="contact-success" class="contact-success">
+                                    <i class="bi bi-check-circle-fill text-rose"></i> Your message has been sent. We'll
+                                    be in touch shortly!
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── FOOTER ─────────────────────────────────────────── -->
+    <footer>
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-lg-4">
+                    <a href="#hero" class="footer-logo">R<span>E</span>KH</a>
+                    <p class="mt-3 footer-intro">Canada's national, networked, and accessible digital platform for
+                        cutting-edge research on women entrepreneurship.</p>
+                    <div class="mt-3">
+                        <a href="#" class="social-circle"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-circle"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-circle"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="social-circle"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <p class="footer-heading">Explore</p>
+                    <a href="#about" class="footer-link">About</a>
+                    <a href="#data-section" class="footer-link">Data</a>
+                    <a href="#research" class="footer-link">Research</a>
+                    <a href="#news" class="footer-link">News &amp; Events</a>
+                    <a href="#faq" class="footer-link">FAQ</a>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <p class="footer-heading">Resources</p>
+                    <a href="#" class="footer-link">SOWE Report</a>
+                    <a href="#" class="footer-link">Policy Briefs</a>
+                    <a href="#" class="footer-link">Data Explorer</a>
+                    <a href="#" class="footer-link">See It. Be It.</a>
+                </div>
+                <div class="col-lg-4">
+                    <p class="footer-heading">Stay Updated</p>
+                    <p class="footer-sub-copy">Get the latest research and events in your inbox.</p>
+                    <form class="d-flex gap-2" onsubmit="handleFooterSub(event)">
+                        <input type="email" class="nl-input footer-sub-input" placeholder="Your email" required />
+                        <button type="submit" class="btn-rekh btn-rekh-primary footer-sub-btn">Go <i
+                                class="bi bi-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bar d-flex flex-wrap gap-3 align-items-center justify-content-between">
+                <p class="footer-copy">© 2025 REKH — Women Entrepreneurship Knowledge Hub. All rights reserved.</p>
+                <div class="d-flex gap-3">
+                    <a href="#" class="footer-link footer-legal-link">Privacy Policy</a>
+                    <a href="#" class="footer-link footer-legal-link">Terms of Use</a>
+                    <a href="#" class="footer-link footer-legal-link">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ─── SCRIPTS ────────────────────────────────────────── -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        /* ── AOS init ── */
+        AOS.init({ duration: 750, once: true, offset: 60 });
+
+        /* ── Swiper ── */
+        new Swiper('.newsSwiper', {
+            slidesPerView: 1.1,
+            spaceBetween: 20,
+            breakpoints: {
+                576: { slidesPerView: 1.5 },
+                768: { slidesPerView: 2.2 },
+                992: { slidesPerView: 3 }
+            },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            grabCursor: true
+        });
+
+        /* ── Custom cursor ── */
+        const cur = document.getElementById('cursor');
+        const ring = document.getElementById('cursorRing');
+        let mx = 0, my = 0, rx = 0, ry = 0;
+        document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+        (function animCursor() {
+            cur.style.transform = `translate(${mx - 5}px,${my - 5}px)`;
+            rx += (mx - rx) * .12;
+            ry += (my - ry) * .12;
+            ring.style.transform = `translate(${rx - 18}px,${ry - 18}px)`;
+            requestAnimationFrame(animCursor);
+        })();
+
+        /* ── Navbar scroll ── */
+        const navbar = document.getElementById('navbar');
+        const progressBar = document.getElementById('progress-bar');
+        const backTop = document.getElementById('back-top');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
+            backTop.classList.toggle('visible', window.scrollY > 400);
+            const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+            progressBar.style.width = pct + '%';
+        });
+
+        /* ── Mobile nav ── */
+        const burger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+        const closeNavBtn = document.getElementById('closeNav');
+        function setHamburgerState(isOpen) {
+            const spans = burger.querySelectorAll('span');
+            if (isOpen) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+            } else {
+                spans[0].style.transform = '';
+                spans[1].style.opacity = '';
+                spans[2].style.transform = '';
+            }
+            burger.setAttribute('aria-expanded', String(isOpen));
+        }
+        function openMobileNav() {
+            mobileNav.classList.add('open');
+            document.body.classList.add('mobile-nav-open');
+            setHamburgerState(true);
+        }
+        function closeMobileNav() {
+            mobileNav.classList.remove('open');
+            document.body.classList.remove('mobile-nav-open');
+            setHamburgerState(false);
+        }
+        burger.addEventListener('click', openMobileNav);
+        closeNavBtn.addEventListener('click', closeMobileNav);
+
+        /* ── Counter animation ── */
+        function animateCounters() {
+            document.querySelectorAll('.counter').forEach(el => {
+                const target = +el.dataset.target;
+                let current = 0;
+                const step = target / 60;
+                const id = setInterval(() => {
+                    current += step;
+                    if (current >= target) { el.textContent = target + '%'; clearInterval(id); }
+                    else el.textContent = Math.floor(current) + '%';
+                }, 25);
+            });
+        }
+        const heroObserver = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting) { animateCounters(); heroObserver.disconnect(); }
+        }, { threshold: .5 });
+        heroObserver.observe(document.getElementById('hero'));
+
+        /* ── FAQ accordion ── */
+        function toggleFaq(btn) {
+            const item = btn.closest('.faq-item');
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+            if (!isOpen) item.classList.add('open');
+        }
+
+        /* ── Newsletter ── */
+        function handleSubscribe(e) {
+            e.preventDefault();
+            document.getElementById('nl-success').style.display = 'block';
+            e.target.reset();
+        }
+        function handleFooterSub(e) { e.preventDefault(); e.target.reset(); }
+
+        /* ── Contact form ── */
+        function handleContact(e) {
+            e.preventDefault();
+            document.getElementById('contact-success').style.display = 'block';
+            e.target.reset();
+        }
+
+    </script>
+</body>
+
+</html>
