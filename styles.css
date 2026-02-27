@@ -1715,7 +1715,7 @@ header {
 /* ---------- Columns ---------- */
 .footer-col-title {
   color: #fff;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 600;
   margin-bottom: 18px;
   text-transform: uppercase;
@@ -2715,6 +2715,12 @@ header {
 
   .tabs-bar {
     justify-content: center;
+  }
+  .hero-actions {
+   margin-bottom: 0px;
+  }
+  .heroimg_warpper{
+    margin-bottom: 40px;
   }
 }
 
