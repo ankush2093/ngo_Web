@@ -104,11 +104,14 @@ select {
   font-family: var(--font-sans);
 }
 
+#main-content,
 .main-content {
   position: relative;
   z-index: 1;
+  isolation: isolate;
 }
 
+#main-content::before,
 .main-content::before {
   content: "";
   position: fixed;
@@ -116,14 +119,27 @@ select {
   left: 0;
   width: 100%;
   height: 100%;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(56, 189, 248, 0.16), transparent 34%),
+    radial-gradient(circle at 88% 10%, rgba(37, 99, 235, 0.2), transparent 36%),
+    radial-gradient(circle at 50% 82%, rgba(14, 165, 233, 0.14), transparent 44%),
+    linear-gradient(135deg, #f8fbff 0%, #edf4ff 50%, #f7fbff 100%);
+  pointer-events: none;
+  z-index: -1;
+}
 
-  background: 
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-    url("https://images.unsplash.com/photo-1557804506-669a67965ba0");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+#main-content::after,
+.main-content::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(37, 99, 235, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(circle at center, black 35%, transparent 88%);
+  -webkit-mask-image: radial-gradient(circle at center, black 35%, transparent 88%);
+  pointer-events: none;
   z-index: -1;
 }
 
@@ -191,6 +207,10 @@ select {
 
 .section--surface-2 {
   background: var(--color-surface-2);
+}
+
+.section--transparent {
+  background: transparent !important;
 }
 
 .section--navy {
@@ -1508,6 +1528,9 @@ header {
 /* ============================================================
    PARTNERS SECTION
    ============================================================ */
+   .organation_trust_section{
+    background: var(--color-primary-light);
+   }
 .partner-logo {
   background: var(--color-bg);
   border: 1px solid var(--color-border);
@@ -1606,6 +1629,8 @@ header {
    FOOTER
    ============================================================ */
 .footer {
+  position: relative;
+  z-index: 2;
   background: var(--color-navy);
   color: rgba(255, 255, 255, 0.7);
   padding-top: 72px;
