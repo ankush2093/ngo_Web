@@ -1,567 +1,1310 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="EKRI — Entrepreneurship Knowledge & Research Institute. Empowering entrepreneurs through evidence-based research, actionable resources, and a thriving global community."/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="EKRI — Entrepreneurship Knowledge & Research Institute. Empowering entrepreneurs through evidence-based research, actionable resources, and a thriving global community." />
   <title>EKRI — Entrepreneurship Knowledge & Research Institute</title>
-  <link rel="stylesheet" href="styles.css"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
 </head>
+
 <body>
 
-<!-- Skip to content -->
-<a href="#main-content" class="skip-link">Skip to main content</a>
+  <!-- Skip to content -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<!-- ============ NOTIFICATION BANNER ============ -->
-<div id="notification-banner" class="notification-banner">
-  🎉 EKRI Annual Summit 2025 is now open for registration.
-  <a href="news.html">Learn more →</a>
-  <button id="banner-close" class="notification-close" aria-label="Dismiss banner">✕</button>
-</div>
+  <!-- ============ NOTIFICATION BANNER ============ -->
+  <div id="notification-banner" class="notification-banner">
+    🎉 EKRI Annual Summit 2025 is now open for registration.
+    <a href="news.html">Learn more →</a>
+    <button id="banner-close" class="notification-close" aria-label="Dismiss banner">✕</button>
+  </div>
 
-<!-- ============ NAVBAR ============ -->
-<header>
-  <nav class="navbar" aria-label="Main navigation">
-    <div class="container">
-      <div class="nav-inner">
-        <!-- Logo -->
-        <a href="index.html" class="nav-logo" aria-label="EKRI Home">
-          <div class="nav-logo-mark" aria-hidden="true">EK</div>
-          <span class="nav-logo-text">EK<span>RI</span></span>
-        </a>
+  <!-- ============ NAVBAR ============ -->
+  <header>
+    <nav class="navbar" aria-label="Main navigation">
+      <div class="container">
+        <div class="nav-inner">
+          <!-- Logo -->
+          <a href="index.html" class="nav-logo" aria-label="EKRI Home">
+            <div class="nav-logo-mark" aria-hidden="true">EK</div>
+            <span class="nav-logo-text">EK<span>RI</span></span>
+          </a>
 
-        <!-- Desktop Links -->
-        <ul class="nav-links" role="list">
-          <li><a href="index.html"    class="nav-link active">Home</a></li>
-          <li><a href="about.html"    class="nav-link">About</a></li>
-          <li><a href="research.html" class="nav-link">Research</a></li>
-          <li><a href="resources.html"class="nav-link">Resources</a></li>
-          <li><a href="news.html"     class="nav-link">News &amp; Events</a></li>
-          <li><a href="index.html#community" class="nav-link">Community</a></li>
-          <li><a href="contact.html"  class="nav-link">Contact</a></li>
-        </ul>
+          <!-- Desktop Links -->
+          <ul class="nav-links" role="list">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="research.html" class="nav-link">Research</a></li>
+            <li><a href="resources.html" class="nav-link">Resources</a></li>
+            <li><a href="news.html" class="nav-link">News &amp; Events</a></li>
+            <li><a href="index.html#community" class="nav-link">Community</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
 
-        <!-- Actions -->
+          <!-- Actions -->
+          <div class="nav-actions">
+            <button class="lang-switch" aria-label="Switch language">EN | FR</button>
+            <a href="#" class="btn btn--ghost btn--sm">Login</a>
+            <a href="#" class="btn btn--primary btn--sm">Register</a>
+            <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Drawer -->
+    <div class="nav-drawer" id="nav-drawer" role="dialog" aria-label="Navigation menu">
+      <div class="nav-drawer-inner">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="research.html" class="nav-link">Research</a>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="news.html" class="nav-link">News &amp; Events</a>
+        <a href="index.html#community" class="nav-link">Community</a>
+        <a href="contact.html" class="nav-link">Contact</a>
         <div class="nav-actions">
-          <button class="lang-switch" aria-label="Switch language">EN | FR</button>
-          <a href="#" class="btn btn--ghost btn--sm">Login</a>
-          <a href="#" class="btn btn--primary btn--sm">Register</a>
-          <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
-            <span></span><span></span><span></span>
-          </button>
+          <button class="lang-switch">EN | FR</button>
+          <a href="#" class="btn btn--ghost w-full">Login</a>
+          <a href="#" class="btn btn--primary w-full">Register</a>
         </div>
       </div>
     </div>
-  </nav>
+  </header>
 
-  <!-- Mobile Drawer -->
-  <div class="nav-drawer" id="nav-drawer" role="dialog" aria-label="Navigation menu">
-    <div class="nav-drawer-inner">
-      <a href="index.html"    class="nav-link active">Home</a>
-      <a href="about.html"    class="nav-link">About</a>
-      <a href="research.html" class="nav-link">Research</a>
-      <a href="resources.html"class="nav-link">Resources</a>
-      <a href="news.html"     class="nav-link">News &amp; Events</a>
-      <a href="index.html#community" class="nav-link">Community</a>
-      <a href="contact.html"  class="nav-link">Contact</a>
-      <div class="nav-actions">
-        <button class="lang-switch">EN | FR</button>
-        <a href="#" class="btn btn--ghost w-full">Login</a>
-        <a href="#" class="btn btn--primary w-full">Register</a>
+  <!-- ============ MAIN CONTENT ============ -->
+  <main id="main-content">
+
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
       </div>
-    </div>
-  </div>
-</header>
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-12 col-md-6">
+            <div class="hero-content">
+              <div class="hero-label animate-fade-in-up" aria-hidden="true">
+                Leading Entrepreneurship Research Since 2009
+              </div>
+              <h1 class="hero-title animate-fade-in-up delay-100">
+                Knowledge That Builds<br />
+                <span class="highlight">Entrepreneurs</span>
+              </h1>
+              <p class="hero-subtitle animate-fade-in-up delay-200">
+                EKRI bridges the gap between groundbreaking research and real-world entrepreneurship. We generate
+                evidence-based insights that help entrepreneurs, policymakers, and organizations create lasting economic
+                impact.
+              </p>
+              <div class="hero-actions animate-fade-in-up delay-300">
+                <a href="research.html" class="btn btn--primary btn--lg">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                  </svg>
+                  Explore Research
+                </a>
+                <a href="index.html#community" class="btn btn--outlined"
+                  style="border-color:rgba(255,255,255,0.5);color:#fff;">
+                  Join Our Community
+                </a>
+              </div>
 
-<!-- ============ MAIN CONTENT ============ -->
-<main id="main-content">
 
-  <!-- ============ HERO SECTION ============ -->
-  <section class="hero" aria-label="Hero">
-    <div class="hero-bg" aria-hidden="true">
-      <div class="hero-orb hero-orb-1"></div>
-      <div class="hero-orb hero-orb-2"></div>
-    </div>
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-label animate-fade-in-up" aria-hidden="true">
-          Leading Entrepreneurship Research Since 2009
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="heroimg_warpper ms-md-auto">
+              <img
+                src="https://moodle.net/.pkg/@moodlenet/ed-resource/public/2023/05/01/12/36/06/199_iStock_Research_methods_.jpg"
+                alt="Hero Image">
+            </div>
+          </div>
         </div>
-        <h1 class="hero-title animate-fade-in-up delay-100">
-          Empowering Entrepreneurs<br/>
-          Through <span class="highlight">Knowledge</span><br/>
-          &amp; Research
-        </h1>
-        <p class="hero-subtitle animate-fade-in-up delay-200">
-          EKRI bridges the gap between groundbreaking research and real-world entrepreneurship. We generate evidence-based insights that help entrepreneurs, policymakers, and organizations create lasting economic impact.
-        </p>
-        <div class="hero-actions animate-fade-in-up delay-300">
-          <a href="research.html" class="btn btn--primary btn--lg">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
-            Explore Research
+      </div>
+    </section>
+
+
+    <!-- About US -->
+    <section class="Business-section section--surface">
+      <div class="container">
+        <div class="row align-items-center">
+
+          <!-- Left Image -->
+          <div class="col-lg-6">
+            <div class="Business-image-wrapper">
+              <img src="https://lakshtaxi.netlify.app/img/businessimg.jpg" alt="Business Partner">
+            </div>
+          </div>
+
+          <!-- Right Content -->
+          <div class="col-lg-6">
+            <div class="Business-content">
+
+              <span class="Business-subtitle">About Our Company</span>
+
+              <h2 class="Business-title">
+                WE'RE PARTNER OF <br> YOUR BUSINESS
+              </h2>
+
+              <div class="Business-quote-box">
+                <p>
+                  Interactively maintain holistic best practices and user fully researched commerce
+                  installed base internal
+                </p>
+
+                <div class="Business-author">
+                  <strong>EKRI</strong>
+                  <span> - Head Of Idea</span>
+                </div>
+              </div>
+
+              <div class="Business-call-box">
+                <div class="Business-call-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="Business-call-text">
+                  <span>Call Us 24/7 Anytime:</span>
+                  <a href="tel:+2563153215">+256 315 3215</a>
+                </div>
+              </div>
+
+              <a href="javascript:void(0)" class="Business-btn">Know More</a>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <style>
+      /* Business */
+      .Business-section {
+        background: #f4f4f4;
+        padding: 40px 0px;
+      }
+
+      /* Image */
+      .Business-image-wrapper img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+
+      .Business-subtitle {
+        font-size: 14px;
+        color: var(--color-text-primary);
+        font-weight: 600;
+        text-transform: uppercase;
+        position: relative;
+        padding-left: 40px;
+      }
+
+      .Business-subtitle::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 30px;
+        height: 2px;
+        background: var(--color-danger);
+      }
+
+      /* Title */
+      .Business-title {
+        font-size: 36px;
+        font-weight: 800;
+        margin: 15px 0 25px;
+        color: #111;
+      }
+
+      /* Quote Box */
+      .Business-quote-box {
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        margin-bottom: 25px;
+        border: 1px dashed var(--color-primary);
+      }
+
+      .Business-author span {
+        color: var(--color-primary-dark);
+      }
+
+      /* Call Box */
+      .Business-call-box {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+      }
+
+      .Business-call-icon {
+        width: 50px;
+        height: 50px;
+        background: var(--color-success);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+      }
+
+      .Business-call-icon i {
+        color: #fff;
+      }
+
+      .Business-call-text span {
+        display: block;
+        font-size: 14px;
+      }
+
+      .Business-call-text a {
+        font-size: 20px;
+        font-weight: 700;
+        color: #000;
+        text-decoration: none;
+      }
+
+      /* Button */
+      .Business-btn {
+        display: inline-block;
+        background: var(--color-primary-dark);
+        color: #fff;
+        padding: 8px 30px;
+        font-weight: 600;
+        text-decoration: none;
+
+        clip-path: polygon(11% 0%,
+            /* top-left cut */
+            100% 0%,
+            /* top-right */
+            90% 100%,
+            /* bottom-right cut */
+            0% 100%
+            /* bottom-left */
+          );
+
+        transition: all 0.3s ease;
+      }
+
+      .Business-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(240, 211, 69, 0.3);
+      }
+    </style>
+
+
+    <section>
+      <!-- Stats Bar -->
+      <div class="hero-stats animate-fade-in-up delay-400 d-none" role="list" aria-label="Key statistics">
+        <div class="hero-stat" role="listitem">
+          <div class="hero-stat-value"><span data-counter="500" data-suffix="+">500+</span></div>
+          <div class="hero-stat-label">Research Reports</div>
+        </div>
+        <div class="hero-stat" role="listitem">
+          <div class="hero-stat-value"><span data-counter="10000" data-suffix="+">10,000+</span></div>
+          <div class="hero-stat-label">Community Members</div>
+        </div>
+        <div class="hero-stat" role="listitem">
+          <div class="hero-stat-value"><span data-counter="25" data-suffix="+">25+</span></div>
+          <div class="hero-stat-label">Countries Reached</div>
+        </div>
+        <div class="hero-stat" role="listitem">
+          <div class="hero-stat-value"><span data-counter="15" data-suffix=" Yrs">15 Yrs</span></div>
+          <div class="hero-stat-label">of Impact</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ IMPACT STATISTICS ============ -->
+    <section class="section section--surface" aria-labelledby="impact-heading">
+      <div class="container">
+        <div class="section-header animate-fade-in-up">
+          <span class="section-label">Our Impact</span>
+          <h2 class="section-title" id="impact-heading">Driving Measurable<span> Change </span></h2>
+          <p class="section-subtitle">Over 15 years, EKRI has helped shape entrepreneurship ecosystems across the globe
+            through data-driven research, policy advocacy, and community building.</p>
+        </div>
+        <div class="row g-3">
+
+          <div class="col-12 col-md-3">
+            <div class="stat-card animate-fade-in-up">
+              <div class="stat-icon stat-icon--blue" aria-hidden="true"><i class="fa-solid fa-chart-line"></i></div>
+              <div class="stat-number"><span data-counter="500" data-suffix="+">500+</span></div>
+              <div class="stat-label">Published Reports</div>
+              <p class="stat-desc">Peer-reviewed research covering entrepreneurship policy, financing, and ecosystem
+                development.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="stat-card animate-fade-in-up delay-100">
+              <div class="stat-icon stat-icon--purple" aria-hidden="true"><i class="fa-solid fa-earth-americas"></i>
+              </div>
+              <div class="stat-number"><span data-counter="25" data-suffix="+">25+</span></div>
+              <div class="stat-label">Countries Active</div>
+              <p class="stat-desc">Partnerships with research institutions, governments, and NGOs spanning 6 continents.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-3">
+            <div class="stat-card animate-fade-in-up delay-200">
+              <div class="stat-icon stat-icon--green" aria-hidden="true"><i class="fa-solid fa-user-graduate"></i></div>
+              <div class="stat-number"><span data-counter="12000" data-suffix="+">12,000+</span></div>
+              <div class="stat-label">Entrepreneurs Trained</div>
+              <p class="stat-desc">Capacity-building programs, workshops, and online courses delivered globally.</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-3">
+            <div class="stat-card animate-fade-in-up delay-300">
+              <div class="stat-icon stat-icon--orange" aria-hidden="true"><i class="fa-solid fa-lightbulb"></i></div>
+              <div class="stat-number"><span data-counter="180" data-suffix="+">180+</span></div>
+              <div class="stat-label">Policy Recommendations</div>
+              <p class="stat-desc">Evidence-backed policy briefs adopted by governments and development organizations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESEARCH & INSIGHTS ============ -->
+    <section class="section" id="research" aria-labelledby="research-heading">
+      <div class="container">
+        <div class="section-header animate-fade-in-up">
+          <span class="section-label">Research &amp; Insights</span>
+          <h2 class="section-title" id="research-heading">Latest Research <span> Publications</span></h2>
+          <p class="section-subtitle">Explore our most recent findings on entrepreneurship trends, financing barriers,
+            policy effectiveness, and inclusive innovation.</p>
+        </div>
+        <div class="row g-3">
+          <!-- Research Card 1 -->
+
+          <div class="col-12 col-md-4">
+            <article class="card animate-fade-in-up">
+              <div class="card-img-wrap">
+                <img src="https://picsum.photos/seed/ekri-research-1/900/560"
+                  alt="Women entrepreneurs reviewing financial reports">
+                <span class="card-image-tag">Featured Study</span>
+              </div>
+              <div class="card-body">
+                <div class="card-meta">
+                  <span class="badge badge--blue">Policy Brief</span>
+                  <span style="font-size:var(--text-xs);color:var(--color-text-muted)">March 2025</span>
+                  <span style="font-size:var(--text-xs);color:var(--color-text-muted)"><i
+                      class="fa-regular fa-clock"></i> 8 min read</span>
+                </div>
+                <h3 class="card-title text-truncate-2">Financing Gaps for Women Entrepreneurs in the Digital Economy
+                </h3>
+                <p class="card-excerpt text-truncate-2">This report examines persistent financing disparities facing
+                  women-led ventures,
+                  with specific focus on access to venture capital, microfinance, and government grants in emerging
+                  markets.</p>
+                <a href="research.html" class="card-link" aria-label="Read full report on financing gaps">
+                  Read Full Report
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <article class="card animate-fade-in-up delay-100">
+              <div class="card-img-wrap">
+                <img src="https://picsum.photos/seed/ekri-research-2/900/560"
+                  alt="Team discussing AI adoption strategy on laptop screens">
+                <span class="card-image-tag">Trend Report</span>
+              </div>
+              <div class="card-body">
+                <div class="card-meta">
+                  <span class="badge badge--green">Innovation</span>
+                  <span style="font-size:var(--text-xs);color:var(--color-text-muted)">February 2025</span>
+                  <span style="font-size:var(--text-xs);color:var(--color-text-muted)"><i
+                      class="fa-regular fa-clock"></i>
+                    11 min read</span>
+                </div>
+                <h3 class="card-title text-truncate-2">AI Adoption Among Small &amp; Medium Enterprises: A 2025
+                  Landscape Report</h3>
+                <p class="card-excerpt text-truncate-2">Surveying over 3,000 SMEs across North America and Europe, this
+                  study reveals
+                  adoption rates, barriers, and strategic opportunities for integrating AI into business operations.</p>
+                <a href="research.html" class="card-link" aria-label="Read AI adoption report">
+                  Read Full Report
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <article class="card animate-fade-in-up delay-200">
+              <div class="card-img-wrap">
+                <img src="https://picsum.photos/seed/ekri-research-3/900/560"
+                  alt="Startup founders in a collaborative city innovation workspace">
+                <span class="card-image-tag">Case Analysis</span>
+              </div>
+              <div class="card-body">
+                <div class="card-meta">
+                  <span class="badge badge--purple">Ecosystem</span>
+                  <span style="font-size:var(--text-xs);color:var(--color-text-muted)">January 2025</span>
+                  <span style="font-size:var(--text-xs);color:var(--color-text-muted)"><i
+                      class="fa-regular fa-clock"></i>
+                    9 min read</span>
+                </div>
+                <h3 class="card-title text-truncate-2">Building Inclusive Entrepreneurship Ecosystems: Lessons from 12
+                  Cities</h3>
+                <p class="card-excerpt text-truncate-2">A comparative analysis of startup ecosystems from 12 cities
+                  worldwide,
+                  identifying
+                  the structural conditions that enable diverse and inclusive entrepreneurship to flourish.</p>
+                <a href="research.html" class="card-link" aria-label="Read ecosystem report">
+                  Read Full Report
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="center-cta animate-fade-in-up">
+          <a href="research.html" class="btn btn--outlined btn--lg">
+            View All Research
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
           </a>
-          <a href="index.html#community" class="btn btn--outlined" style="border-color:rgba(255,255,255,0.5);color:#fff;">
-            Join Our Community
-          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section explore_data_sec" id="research">
+      <div class="container">
+
+        <div class="section-header animate-fade-in-up">
+          <span class="section-label">Research &amp; Insights</span>
+          <h2 class="section-title" id="research-heading">Explore <span>Data</span></h2>
+          <p class="section-subtitle">Find data on women entrepreneurs</p>
         </div>
 
-        <!-- Stats Bar -->
-        <div class="hero-stats animate-fade-in-up delay-400" role="list" aria-label="Key statistics">
-          <div class="hero-stat" role="listitem">
-            <div class="hero-stat-value"><span data-counter="500" data-suffix="+">500+</span></div>
-            <div class="hero-stat-label">Research Reports</div>
-          </div>
-          <div class="hero-stat" role="listitem">
-            <div class="hero-stat-value"><span data-counter="10000" data-suffix="+">10,000+</span></div>
-            <div class="hero-stat-label">Community Members</div>
-          </div>
-          <div class="hero-stat" role="listitem">
-            <div class="hero-stat-value"><span data-counter="25" data-suffix="+">25+</span></div>
-            <div class="hero-stat-label">Countries Reached</div>
-          </div>
-          <div class="hero-stat" role="listitem">
-            <div class="hero-stat-value"><span data-counter="15" data-suffix=" Yrs">15 Yrs</span></div>
-            <div class="hero-stat-label">of Impact</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        <div class="row g-3">
 
-  <!-- ============ IMPACT STATISTICS ============ -->
-  <section class="section section--surface" aria-labelledby="impact-heading">
-    <div class="container">
-      <div class="section-header animate-fade-in-up">
-        <span class="section-label">Our Impact</span>
-        <h2 class="section-title" id="impact-heading">Driving Measurable Change</h2>
-        <p class="section-subtitle">Over 15 years, EKRI has helped shape entrepreneurship ecosystems across the globe through data-driven research, policy advocacy, and community building.</p>
-      </div>
-      <div class="grid-4">
-        <div class="stat-card animate-fade-in-up">
-          <div class="stat-icon stat-icon--blue" aria-hidden="true">📊</div>
-          <div class="stat-number"><span data-counter="500" data-suffix="+">500+</span></div>
-          <div class="stat-label">Published Reports</div>
-          <p class="stat-desc">Peer-reviewed research covering entrepreneurship policy, financing, and ecosystem development.</p>
-        </div>
-        <div class="stat-card animate-fade-in-up delay-100">
-          <div class="stat-icon stat-icon--purple" aria-hidden="true">🌍</div>
-          <div class="stat-number"><span data-counter="25" data-suffix="+">25+</span></div>
-          <div class="stat-label">Countries Active</div>
-          <p class="stat-desc">Partnerships with research institutions, governments, and NGOs spanning 6 continents.</p>
-        </div>
-        <div class="stat-card animate-fade-in-up delay-200">
-          <div class="stat-icon stat-icon--green" aria-hidden="true">🎓</div>
-          <div class="stat-number"><span data-counter="12000" data-suffix="+">12,000+</span></div>
-          <div class="stat-label">Entrepreneurs Trained</div>
-          <p class="stat-desc">Capacity-building programs, workshops, and online courses delivered globally.</p>
-        </div>
-        <div class="stat-card animate-fade-in-up delay-300">
-          <div class="stat-icon stat-icon--orange" aria-hidden="true">💡</div>
-          <div class="stat-number"><span data-counter="180" data-suffix="+">180+</span></div>
-          <div class="stat-label">Policy Recommendations</div>
-          <p class="stat-desc">Evidence-backed policy briefs adopted by governments and development organizations.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+          <div class="col-12 col-md-4">
+            <div class="stats_card_redesign">
 
-  <!-- ============ RESEARCH & INSIGHTS ============ -->
-  <section class="section" id="research" aria-labelledby="research-heading">
-    <div class="container">
-      <div class="section-header animate-fade-in-up">
-        <span class="section-label">Research &amp; Insights</span>
-        <h2 class="section-title" id="research-heading">Latest Research Publications</h2>
-        <p class="section-subtitle">Explore our most recent findings on entrepreneurship trends, financing barriers, policy effectiveness, and inclusive innovation.</p>
-      </div>
-      <div class="grid-3">
-        <!-- Research Card 1 -->
-        <article class="card animate-fade-in-up">
-          <div class="card-img-wrap">
-            <div class="img-placeholder gradient-research">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5"/></svg>
+              <div class="stats_top_row">
+                <h2 class="stats_percent">20%</h2>
+
+                <div class="stats_icon">
+                  <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="">
+                </div>
+              </div>
+
+              <div class="stats_content_row">
+                <p class="stats_para">
+                  of all Canadian businesses are majority women-owned
+                </p>
+
+                <span class="stats_arrow">→</span>
+              </div>
+
+              <div class="stats_bottom_line"></div>
+
             </div>
           </div>
-          <div class="card-body">
-            <div class="card-meta">
-              <span class="badge badge--blue">Policy Brief</span>
-              <span style="font-size:var(--text-xs);color:var(--color-text-muted)">March 2025</span>
-            </div>
-            <h3 class="card-title">Financing Gaps for Women Entrepreneurs in the Digital Economy</h3>
-            <p class="card-excerpt">This report examines persistent financing disparities facing women-led ventures, with specific focus on access to venture capital, microfinance, and government grants in emerging markets.</p>
-            <a href="research.html" class="card-link" aria-label="Read full report on financing gaps">
-              Read Full Report
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-            </a>
-          </div>
-        </article>
 
-        <!-- Research Card 2 -->
-        <article class="card animate-fade-in-up delay-100">
-          <div class="card-img-wrap">
-            <div class="img-placeholder gradient-green">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/></svg>
-            </div>
-          </div>
-          <div class="card-body">
-            <div class="card-meta">
-              <span class="badge badge--green">Innovation</span>
-              <span style="font-size:var(--text-xs);color:var(--color-text-muted)">February 2025</span>
-            </div>
-            <h3 class="card-title">AI Adoption Among Small &amp; Medium Enterprises: A 2025 Landscape Report</h3>
-            <p class="card-excerpt">Surveying over 3,000 SMEs across North America and Europe, this study reveals adoption rates, barriers, and strategic opportunities for integrating AI into business operations.</p>
-            <a href="research.html" class="card-link" aria-label="Read AI adoption report">
-              Read Full Report
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-            </a>
-          </div>
-        </article>
+          <div class="col-12 col-md-4">
+            <div class="stats_card_redesign">
 
-        <!-- Research Card 3 -->
-        <article class="card animate-fade-in-up delay-200">
-          <div class="card-img-wrap">
-            <div class="img-placeholder gradient-purple">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg>
+              <div class="stats_top_row">
+                <h2 class="stats_percent">20%</h2>
+
+                <div class="stats_icon">
+                  <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="">
+                </div>
+              </div>
+
+              <div class="stats_content_row">
+                <p class="stats_para">
+                  of all Canadian businesses are majority women-owned
+                </p>
+
+                <span class="stats_arrow">→</span>
+              </div>
+
+              <div class="stats_bottom_line"></div>
+
             </div>
           </div>
-          <div class="card-body">
-            <div class="card-meta">
-              <span class="badge badge--purple">Ecosystem</span>
-              <span style="font-size:var(--text-xs);color:var(--color-text-muted)">January 2025</span>
+
+          <div class="col-12 col-md-4">
+            <div class="stats_card_redesign">
+
+              <div class="stats_top_row">
+                <h2 class="stats_percent">20%</h2>
+
+                <div class="stats_icon">
+                  <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="">
+                </div>
+              </div>
+
+              <div class="stats_content_row">
+                <p class="stats_para">
+                  of all Canadian businesses are majority women-owned
+                </p>
+
+                <span class="stats_arrow">→</span>
+              </div>
+
+              <div class="stats_bottom_line"></div>
+
             </div>
-            <h3 class="card-title">Building Inclusive Entrepreneurship Ecosystems: Lessons from 12 Cities</h3>
-            <p class="card-excerpt">A comparative analysis of startup ecosystems from 12 cities worldwide, identifying the structural conditions that enable diverse and inclusive entrepreneurship to flourish.</p>
-            <a href="research.html" class="card-link" aria-label="Read ecosystem report">
-              Read Full Report
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-            </a>
           </div>
-        </article>
-      </div>
-      <div class="center-cta animate-fade-in-up">
-        <a href="research.html" class="btn btn--outlined btn--lg">
-          View All Research
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
 
-  <!-- ============ RESOURCES SECTION ============ -->
-  <section class="section section--surface" id="resources" aria-labelledby="resources-heading">
-    <div class="container">
-      <div class="section-header animate-fade-in-up">
-        <span class="section-label">Knowledge Hub</span>
-        <h2 class="section-title" id="resources-heading">Resources &amp; Tools</h2>
-        <p class="section-subtitle">Practical guides, data sets, toolkits, and on-demand webinars designed to support entrepreneurs, researchers, and policymakers.</p>
-      </div>
-
-      <!-- Tabs -->
-      <div class="tabs-container">
-        <div class="tabs-bar" role="tablist">
-          <button class="tab-btn active" role="tab" data-tab="tab-all"      aria-selected="true"  aria-controls="tab-all">All</button>
-          <button class="tab-btn"        role="tab" data-tab="tab-reports"  aria-selected="false" aria-controls="tab-reports">Reports</button>
-          <button class="tab-btn"        role="tab" data-tab="tab-toolkits" aria-selected="false" aria-controls="tab-toolkits">Toolkits</button>
-          <button class="tab-btn"        role="tab" data-tab="tab-webinars" aria-selected="false" aria-controls="tab-webinars">Webinars</button>
-          <button class="tab-btn"        role="tab" data-tab="tab-data"     aria-selected="false" aria-controls="tab-data">Data Sets</button>
         </div>
 
-        <div id="tab-all" class="tab-panel active" role="tabpanel">
-          <div class="grid-4">
-            <div class="resource-card animate-fade-in-up">
-              <div class="resource-card-img gradient-resource"><div class="img-placeholder"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="rgba(255,255,255,0.8)"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg></div></div>
-              <div class="resource-card-body">
-                <span class="resource-type-badge badge badge--blue">📄 PDF Report</span>
-                <h3 class="resource-card-title">State of Women's Entrepreneurship 2025</h3>
-                <p class="resource-card-desc">Annual benchmark report on progress, barriers, and opportunities for women entrepreneurs globally.</p>
-                <div class="resource-meta">
-                  <span>2.4 MB · 68 pages</span>
-                  <a href="#" class="resource-download-btn" aria-label="Download report">
-                    Download ↓
-                  </a>
+      </div>
+    </section>
+
+    <style>
+      .explore_data_sec {
+        background-color: var(--color-surface);
+      }
+
+      .stats_card_redesign {
+        background: #fff;
+        padding: 30px;
+        border-radius: 24px;
+        max-width: 550px;
+        transition: 0.3s ease;
+        box-shadow: var(--shadow-blue);
+      }
+
+      /* TOP */
+      .stats_top_row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .stats_percent {
+        font-size: 40px;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .stats_icon {
+        width: 65px;
+        height: 65px;
+        background: #fff;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--color-primary);
+      }
+
+      .stats_icon img {
+        width: 45px;
+        opacity: 0.7;
+      }
+
+      /* CONTENT ROW */
+      .stats_content_row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 25px;
+        gap: 20px;
+      }
+
+      .stats_para {
+        font-size: 18px;
+        line-height: 1.5;
+        color: #222;
+        margin: 0;
+        max-width: 85%;
+      }
+
+      .stats_arrow {
+        font-size: 28px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .stats_card_redesign:hover .stats_arrow {
+        transform: translateX(6px);
+      }
+
+      /* BOTTOM LINE */
+      .stats_bottom_line {
+        width: 100%;
+        height: 2px;
+        background: #000;
+        opacity: 0.3;
+        margin-top: 10px;
+      }
+    </style>
+
+
+    <!--  -->
+    <section class="call-to-book-banner-section">
+      <div class="container">
+
+        <div class="row align-items-center">
+
+          <div class="col-lg-6">
+            <div class="call-to-book-banner">
+              <div class="text-start">
+                <span class="section-label mt-4">Book With Us</span>
+                <h2 class="section-title text-white">Join our <span> mailing list </span></h2>
+                <p class="mb-1 text-white">Stay up-to-date on research, events and initiatives from the Women
+                  Entrepreneurship Knowledge Hub (WEKH).</p>
+              </div>
+
+              <div class="call-to-book-btn-container">
+                <div class="call-icon">
+                  <i class="fas fa-bell me-2"></i>
+                  <span>Subscribe</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="call-to-book-banner-hero-img">
+              <img src="https://lakshtaxi.netlify.app/img/hero-call-tobook.png" alt="Professional Driver">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      /* Call to Book with Us */
+      .call-to-book-banner-section {
+        background-color: #000;
+      }
+
+
+      .call-to-book-banner-hero-img {
+        height: 380px;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+
+      }
+
+      .call-to-book-banner-hero-img img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: auto;
+        height: 100%;
+      }
+
+
+
+      .call-to-book-btn-container {
+        display: inline-flex;
+        align-items: center;
+        border-radius: 8px;
+        gap: 12px;
+        margin-top: 15px;
+      }
+
+      .call-icon {
+        width: 150px;
+        height: 45px;
+        background: var(--color-primary-dark);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .call-icon i {
+        color: #fff;
+        font-size: 18px;
+      }
+
+      .call-icon span {
+        color: #fff;
+        font-weight: 600;
+      }
+
+      .call-text span {
+        display: block;
+        color: #fff;
+        font-size: 14px;
+      }
+
+      .call-text a {
+        display: block;
+        color: var(--color-primary);
+        font-size: 18px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .call-text a:hover {
+        color: var(--color-warning);
+      }
+    </style>
+    <!-- ============ RESOURCES SECTION ============ -->
+    <section class="section section--surface d-none" id="resources" aria-labelledby="resources-heading">
+      <div class="container">
+        <div class="section-header animate-fade-in-up">
+          <span class="section-label">Knowledge Hub</span>
+          <h2 class="section-title" id="resources-heading">Resources &amp; Tools</h2>
+          <p class="section-subtitle">Practical guides, data sets, toolkits, and on-demand webinars designed to support
+            entrepreneurs, researchers, and policymakers.</p>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs-container">
+          <div class="tabs-bar" role="tablist">
+            <button class="tab-btn active" role="tab" data-tab="tab-all" aria-selected="true"
+              aria-controls="tab-all">All</button>
+            <button class="tab-btn" role="tab" data-tab="tab-reports" aria-selected="false"
+              aria-controls="tab-reports">Reports</button>
+            <button class="tab-btn" role="tab" data-tab="tab-toolkits" aria-selected="false"
+              aria-controls="tab-toolkits">Toolkits</button>
+            <button class="tab-btn" role="tab" data-tab="tab-webinars" aria-selected="false"
+              aria-controls="tab-webinars">Webinars</button>
+            <button class="tab-btn" role="tab" data-tab="tab-data" aria-selected="false" aria-controls="tab-data">Data
+              Sets</button>
+          </div>
+
+          <div id="tab-all" class="tab-panel active" role="tabpanel">
+            <div class="grid-4">
+              <div class="resource-card animate-fade-in-up">
+                <div class="resource-card-img gradient-resource">
+                  <div class="img-placeholder"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                      stroke-width="1.5" stroke="rgba(255,255,255,0.8)">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                    </svg></div>
+                </div>
+                <div class="resource-card-body">
+                  <span class="resource-type-badge badge badge--blue">📄 PDF Report</span>
+                  <h3 class="resource-card-title">State of Women's Entrepreneurship 2025</h3>
+                  <p class="resource-card-desc">Annual benchmark report on progress, barriers, and opportunities for
+                    women entrepreneurs globally.</p>
+                  <div class="resource-meta">
+                    <span>2.4 MB · 68 pages</span>
+                    <a href="#" class="resource-download-btn" aria-label="Download report">
+                      Download ↓
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="resource-card animate-fade-in-up delay-100">
+                <div class="resource-card-img gradient-research">
+                  <div class="img-placeholder"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                      stroke-width="1.5" stroke="rgba(255,255,255,0.8)">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+                    </svg></div>
+                </div>
+                <div class="resource-card-body">
+                  <span class="resource-type-badge badge badge--cyan">🛠 Toolkit</span>
+                  <h3 class="resource-card-title">Business Model Canvas Toolkit for Social Ventures</h3>
+                  <p class="resource-card-desc">Interactive toolkit helping social entrepreneurs design, test, and
+                    iterate their business models effectively.</p>
+                  <div class="resource-meta">
+                    <span>Interactive · Free</span>
+                    <a href="#" class="resource-download-btn">Access →</a>
+                  </div>
+                </div>
+              </div>
+              <div class="resource-card animate-fade-in-up delay-200">
+                <div class="resource-card-img gradient-event">
+                  <div class="img-placeholder"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                      stroke-width="1.5" stroke="rgba(255,255,255,0.8)">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+                    </svg></div>
+                </div>
+                <div class="resource-card-body">
+                  <span class="resource-type-badge badge badge--orange">🎬 Webinar</span>
+                  <h3 class="resource-card-title">Navigating Series A Funding in a Tighter Market</h3>
+                  <p class="resource-card-desc">On-demand expert panel covering investor expectations, pitch strategies,
+                    and term sheet negotiations.</p>
+                  <div class="resource-meta">
+                    <span>76 min · 1,240 views</span>
+                    <a href="#" class="resource-download-btn">Watch →</a>
+                  </div>
+                </div>
+              </div>
+              <div class="resource-card animate-fade-in-up delay-300">
+                <div class="resource-card-img gradient-purple">
+                  <div class="img-placeholder"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                      stroke-width="1.5" stroke="rgba(255,255,255,0.8)">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 2.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                    </svg></div>
+                </div>
+                <div class="resource-card-body">
+                  <span class="resource-type-badge badge badge--purple">📊 Dataset</span>
+                  <h3 class="resource-card-title">Global Startup Ecosystems Index 2024</h3>
+                  <p class="resource-card-desc">Comprehensive dataset covering 180 startup ecosystems including
+                    investment flows, founder demographics, and policy scores.</p>
+                  <div class="resource-meta">
+                    <span>Excel · 45 MB</span>
+                    <a href="#" class="resource-download-btn">Download ↓</a>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="resource-card animate-fade-in-up delay-100">
-              <div class="resource-card-img gradient-research"><div class="img-placeholder"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="rgba(255,255,255,0.8)"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z"/></svg></div></div>
-              <div class="resource-card-body">
-                <span class="resource-type-badge badge badge--cyan">🛠 Toolkit</span>
-                <h3 class="resource-card-title">Business Model Canvas Toolkit for Social Ventures</h3>
-                <p class="resource-card-desc">Interactive toolkit helping social entrepreneurs design, test, and iterate their business models effectively.</p>
-                <div class="resource-meta">
-                  <span>Interactive · Free</span>
-                  <a href="#" class="resource-download-btn">Access →</a>
-                </div>
-              </div>
+          </div>
+
+          <div id="tab-reports" class="tab-panel" role="tabpanel">
+            <div style="text-align:center;padding:60px 0;color:var(--color-text-muted)">
+              <div style="font-size:48px;margin-bottom:16px">📄</div>
+              <p>Browse all published reports in our <a href="resources.html"
+                  style="color:var(--color-primary);font-weight:600">full resource library</a>.</p>
             </div>
-            <div class="resource-card animate-fade-in-up delay-200">
-              <div class="resource-card-img gradient-event"><div class="img-placeholder"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="rgba(255,255,255,0.8)"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/></svg></div></div>
-              <div class="resource-card-body">
-                <span class="resource-type-badge badge badge--orange">🎬 Webinar</span>
-                <h3 class="resource-card-title">Navigating Series A Funding in a Tighter Market</h3>
-                <p class="resource-card-desc">On-demand expert panel covering investor expectations, pitch strategies, and term sheet negotiations.</p>
-                <div class="resource-meta">
-                  <span>76 min · 1,240 views</span>
-                  <a href="#" class="resource-download-btn">Watch →</a>
-                </div>
-              </div>
+          </div>
+          <div id="tab-toolkits" class="tab-panel" role="tabpanel">
+            <div style="text-align:center;padding:60px 0;color:var(--color-text-muted)">
+              <div style="font-size:48px;margin-bottom:16px">🛠️</div>
+              <p>Access all toolkits in our <a href="resources.html"
+                  style="color:var(--color-primary);font-weight:600">knowledge hub</a>.</p>
             </div>
-            <div class="resource-card animate-fade-in-up delay-300">
-              <div class="resource-card-img gradient-purple"><div class="img-placeholder"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="rgba(255,255,255,0.8)"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 2.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/></svg></div></div>
-              <div class="resource-card-body">
-                <span class="resource-type-badge badge badge--purple">📊 Dataset</span>
-                <h3 class="resource-card-title">Global Startup Ecosystems Index 2024</h3>
-                <p class="resource-card-desc">Comprehensive dataset covering 180 startup ecosystems including investment flows, founder demographics, and policy scores.</p>
-                <div class="resource-meta">
-                  <span>Excel · 45 MB</span>
-                  <a href="#" class="resource-download-btn">Download ↓</a>
-                </div>
-              </div>
+          </div>
+          <div id="tab-webinars" class="tab-panel" role="tabpanel">
+            <div style="text-align:center;padding:60px 0;color:var(--color-text-muted)">
+              <div style="font-size:48px;margin-bottom:16px">🎬</div>
+              <p>Watch all webinars in our <a href="resources.html"
+                  style="color:var(--color-primary);font-weight:600">webinar archive</a>.</p>
+            </div>
+          </div>
+          <div id="tab-data" class="tab-panel" role="tabpanel">
+            <div style="text-align:center;padding:60px 0;color:var(--color-text-muted)">
+              <div style="font-size:48px;margin-bottom:16px">📊</div>
+              <p>Explore all datasets in our <a href="resources.html"
+                  style="color:var(--color-primary);font-weight:600">data repository</a>.</p>
             </div>
           </div>
         </div>
 
-        <div id="tab-reports"  class="tab-panel" role="tabpanel">
-          <div style="text-align:center;padding:60px 0;color:var(--color-text-muted)"><div style="font-size:48px;margin-bottom:16px">📄</div><p>Browse all published reports in our <a href="resources.html" style="color:var(--color-primary);font-weight:600">full resource library</a>.</p></div>
-        </div>
-        <div id="tab-toolkits" class="tab-panel" role="tabpanel">
-          <div style="text-align:center;padding:60px 0;color:var(--color-text-muted)"><div style="font-size:48px;margin-bottom:16px">🛠️</div><p>Access all toolkits in our <a href="resources.html" style="color:var(--color-primary);font-weight:600">knowledge hub</a>.</p></div>
-        </div>
-        <div id="tab-webinars" class="tab-panel" role="tabpanel">
-          <div style="text-align:center;padding:60px 0;color:var(--color-text-muted)"><div style="font-size:48px;margin-bottom:16px">🎬</div><p>Watch all webinars in our <a href="resources.html" style="color:var(--color-primary);font-weight:600">webinar archive</a>.</p></div>
-        </div>
-        <div id="tab-data" class="tab-panel" role="tabpanel">
-          <div style="text-align:center;padding:60px 0;color:var(--color-text-muted)"><div style="font-size:48px;margin-bottom:16px">📊</div><p>Explore all datasets in our <a href="resources.html" style="color:var(--color-primary);font-weight:600">data repository</a>.</p></div>
+        <div class="center-cta animate-fade-in-up">
+          <a href="resources.html" class="btn btn--outlined btn--lg">Browse All Resources</a>
         </div>
       </div>
+    </section>
 
-      <div class="center-cta animate-fade-in-up">
-        <a href="resources.html" class="btn btn--outlined btn--lg">Browse All Resources</a>
+
+    <!-- ============ COMMUNITY / SUCCESS STORIES ============ -->
+    <section class="section" id="community" aria-labelledby="community-heading">
+      <div class="container">
+        <div class="section-header animate-fade-in-up">
+          <span class="section-label">Community Voices</span>
+          <h2 class="section-title" id="community-heading">Entrepreneurs <span> We've Supported </span></h2>
+          <p class="section-subtitle">Real stories from entrepreneurs who have used EKRI's research and programs to
+            build, scale, and create impact in their communities.</p>
+        </div>
+        <div class="grid-3">
+          <div class="profile-card animate-fade-in-up">
+            <div class="profile-avatar">
+              <div class="img-placeholder gradient-research"
+                style="display:flex;align-items:center;justify-content:center;font-size:32px">👩🏽</div>
+            </div>
+            <p class="profile-name">Amara Osei-Mensah</p>
+            <p class="profile-role">Founder & CEO, TechBridge Africa</p>
+            <p class="profile-quote">"EKRI's financing gap research gave us the evidence we needed to successfully
+              advocate for policy changes in our country. The data was instrumental in unlocking a $2M government grant
+              program for women tech entrepreneurs."</p>
+          </div>
+          <div class="profile-card animate-fade-in-up delay-100">
+            <div class="profile-avatar">
+              <div class="img-placeholder gradient-green"
+                style="display:flex;align-items:center;justify-content:center;font-size:32px">👨🏻</div>
+            </div>
+            <p class="profile-name">Marcus Chen</p>
+            <p class="profile-role">Co-founder, GreenLeap Ventures</p>
+            <p class="profile-quote">"The EKRI Business Model Toolkit transformed how we approached our social
+              enterprise. Within 6 months of applying their framework, we grew our impact reach by 300% and secured our
+              first institutional investment."</p>
+          </div>
+          <div class="profile-card animate-fade-in-up delay-200">
+            <div class="profile-avatar">
+              <div class="img-placeholder gradient-purple"
+                style="display:flex;align-items:center;justify-content:center;font-size:32px">👩🏾</div>
+            </div>
+            <p class="profile-name">Priya Nair</p>
+            <p class="profile-role">Director, Rural Innovators Network</p>
+            <p class="profile-quote">"EKRI connected us with a global network of researchers and changemakers. The
+              mentorship and resources from their community programs literally changed the trajectory of our
+              organization's impact in rural India."</p>
+          </div>
+        </div>
+        <div class="center-cta animate-fade-in-up">
+          <a href="about.html#team" class="btn btn--ghost btn--lg">Meet Our Community</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ COMMUNITY / SUCCESS STORIES ============ -->
-  <section class="section" id="community" aria-labelledby="community-heading">
+    <!-- ============ NEWS & EVENTS ============ -->
+    <section class="section section--surface d-none" id="news" aria-labelledby="news-heading">
+      <div class="container">
+        <div class="section-header animate-fade-in-up">
+          <span class="section-label">News &amp; Events</span>
+          <h2 class="section-title" id="news-heading">Stay Informed</h2>
+          <p class="section-subtitle">The latest from EKRI — research launches, thought leadership, events, and
+            entrepreneurship sector news.</p>
+        </div>
+        <div class="grid-3">
+          <!-- News Card 1 -->
+          <article class="news-card animate-fade-in-up">
+            <div class="news-card-img">
+              <div class="img-placeholder gradient-research" style="height:100%"></div>
+              <div class="news-date-badge" aria-label="March 15">
+                <div class="day">15</div>
+                <div class="month">Mar</div>
+              </div>
+            </div>
+            <div class="news-card-body">
+              <div class="card-meta"><span class="badge badge--blue">Research</span></div>
+              <h3 class="news-card-title">EKRI Releases Landmark Study on Indigenous Entrepreneurship Barriers</h3>
+              <p class="news-card-excerpt">Our latest research unveils systemic gaps in support infrastructure for
+                Indigenous entrepreneurs across Canada and the US, with concrete policy recommendations.</p>
+              <a href="news.html" class="card-link">Read Full Story <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg></a>
+            </div>
+          </article>
+
+          <!-- News Card 2 -->
+          <article class="news-card animate-fade-in-up delay-100">
+            <div class="news-card-img">
+              <div class="img-placeholder gradient-news" style="height:100%"></div>
+              <div class="news-date-badge" aria-label="March 8">
+                <div class="day">08</div>
+                <div class="month">Mar</div>
+              </div>
+            </div>
+            <div class="news-card-body">
+              <div class="card-meta"><span class="badge badge--purple">Event</span></div>
+              <h3 class="news-card-title">Annual Entrepreneurship Summit 2025: Register Now</h3>
+              <p class="news-card-excerpt">Join 500+ entrepreneurs, researchers, and policymakers at our flagship 3-day
+                event featuring keynotes, workshops, and networking sessions.</p>
+              <a href="news.html" class="card-link">Register Now <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg></a>
+            </div>
+          </article>
+
+          <!-- News Card 3 -->
+          <article class="news-card animate-fade-in-up delay-200">
+            <div class="news-card-img">
+              <div class="img-placeholder gradient-green" style="height:100%"></div>
+              <div class="news-date-badge" aria-label="February 28">
+                <div class="day">28</div>
+                <div class="month">Feb</div>
+              </div>
+            </div>
+            <div class="news-card-body">
+              <div class="card-meta"><span class="badge badge--green">Partnership</span></div>
+              <h3 class="news-card-title">EKRI Partners with UN Women to Advance Women's Economic Empowerment</h3>
+              <p class="news-card-excerpt">A landmark 3-year partnership will fund field research, training programs,
+                and policy advocacy across 10 developing nations.</p>
+              <a href="news.html" class="card-link">Read Full Story <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg></a>
+            </div>
+          </article>
+        </div>
+        <div class="center-cta animate-fade-in-up">
+          <a href="news.html" class="btn btn--outlined btn--lg">View All News &amp; Events</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PARTNERS / SPONSORS ============ -->
+    <section class="section" aria-labelledby="partners-heading">
+      <div class="container">
+        <div class="section-header animate-fade-in-up">
+          <span class="section-label">Partners &amp; Sponsors</span>
+          <h2 class="section-title" id="partners-heading">Organizations That Trust EKRI</h2>
+          <p class="section-subtitle">We collaborate with leading institutions, government bodies, and foundations who
+            share our commitment to entrepreneurship excellence.</p>
+        </div>
+        <div class="grid-4 animate-fade-in-up" style="row-gap:16px;">
+          <div class="partner-logo"><span class="partner-logo-text">🌐 UN WOMEN</span></div>
+          <div class="partner-logo"><span class="partner-logo-text">🏛 WORLD BANK</span></div>
+          <div class="partner-logo"><span class="partner-logo-text">🎓 MIT SLOAN</span></div>
+          <div class="partner-logo"><span class="partner-logo-text">💼 OECD</span></div>
+          <div class="partner-logo"><span class="partner-logo-text">🚀 IFC</span></div>
+          <div class="partner-logo"><span class="partner-logo-text">🏢 IVEY SCHOOL</span></div>
+          <div class="partner-logo"><span class="partner-logo-text">🌱 FUNDACIÓN ACE</span></div>
+          <div class="partner-logo"><span class="partner-logo-text">🔬 KAUFFMAN FND</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NEWSLETTER ============ -->
+    <section class="about-us-cta section">
+      <div class="container">
+        <div class="cta-royal-box glass-glow">
+          <div class="cta-decoration">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+          </div>
+          <div class="cta-content text-center">
+            <span class="cta-mini">24/7 Availability</span>
+            <h2 class="cta-title">Ready for a Premium Travel Experience?</h2>
+            <p class="cta-text">Whether it's a quick city hop or a long outstation journey, Lakshya Travelz ensures
+              you arrive in style, safety, and comfort.</p>
+            <div class="cta-button-group">
+              <a href="tel:+917976127049" class="cta-btn primary">
+                <i class="fas fa-phone-alt"></i> Call for Instant Booking
+              </a>
+              <button class="cta-btn secondary" data-bs-toggle="modal" data-bs-target="#bookingModal">
+                <i class="far fa-calendar-alt"></i> Reserve Online
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .glass-glow {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      }
+
+      /* ========================================
+   Redesigned Final CTA Section
+   ======================================== */
+      .cta-royal-box {
+        position: relative;
+        background: linear-gradient(135deg, #0a1931 0%, #0d6efd 100%);
+        border-radius: 40px;
+        padding: 40px 15px;
+        overflow: hidden;
+        color: #fff;
+        border: none;
+      }
+
+      .cta-decoration .circle {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        z-index: 1;
+      }
+
+      .circle-1 {
+        width: 300px;
+        height: 300px;
+        top: -100px;
+        right: -100px;
+      }
+
+      .circle-2 {
+        width: 200px;
+        height: 200px;
+        bottom: -50px;
+        left: -50px;
+      }
+
+      .cta-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .cta-mini {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 6px 15px;
+        border-radius: 50px;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        display: inline-block;
+      }
+
+      .cta-title {
+        font-size: 44px;
+        font-weight: 800;
+        margin-bottom: 20px;
+        color: #fff;
+      }
+
+      .cta-text {
+        font-size: 18px;
+        opacity: 0.9;
+        max-width: 700px;
+        margin: 0 auto 40px;
+      }
+
+      .cta-button-group {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .cta-btn {
+        padding: 10px 20px;
+        border-radius: 100px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        transition: all 0.3s ease;
+        text-decoration: none !important;
+      }
+
+      .cta-btn.primary {
+        background: var(--color-warning);
+        color: #fff;
+        box-shadow: 0 15px 30px rgba(255, 107, 53, 0.3);
+      }
+
+      .cta-btn.primary:hover {
+        background: #fff;
+        color: var(--color-warning);
+        transform: scale(1.05);
+      }
+
+      .cta-btn.secondary {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+      }
+
+      .cta-btn.secondary:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.05);
+      }
+    </style>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" role="contentinfo">
     <div class="container">
-      <div class="section-header animate-fade-in-up">
-        <span class="section-label">Community Voices</span>
-        <h2 class="section-title" id="community-heading">Entrepreneurs We've Supported</h2>
-        <p class="section-subtitle">Real stories from entrepreneurs who have used EKRI's research and programs to build, scale, and create impact in their communities.</p>
-      </div>
-      <div class="grid-3">
-        <div class="profile-card animate-fade-in-up">
-          <div class="profile-avatar">
-            <div class="img-placeholder gradient-research" style="display:flex;align-items:center;justify-content:center;font-size:32px">👩🏽</div>
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-mark" aria-hidden="true">EK</div>
+            <span class="footer-logo-text">EKRI</span>
           </div>
-          <p class="profile-name">Amara Osei-Mensah</p>
-          <p class="profile-role">Founder & CEO, TechBridge Africa</p>
-          <p class="profile-quote">"EKRI's financing gap research gave us the evidence we needed to successfully advocate for policy changes in our country. The data was instrumental in unlocking a $2M government grant program for women tech entrepreneurs."</p>
+          <p class="footer-desc">The Entrepreneurship Knowledge &amp; Research Institute is a leading non-profit
+            research organization dedicated to empowering entrepreneurs through evidence-based insights and knowledge.
+          </p>
+          <div class="social-links" aria-label="Social media links">
+            <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+            <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+            <a href="#" class="social-link" aria-label="Facebook">f</a>
+            <a href="#" class="social-link" aria-label="YouTube">▶</a>
+            <a href="#" class="social-link" aria-label="Instagram">◻</a>
+          </div>
         </div>
-        <div class="profile-card animate-fade-in-up delay-100">
-          <div class="profile-avatar">
-            <div class="img-placeholder gradient-green" style="display:flex;align-items:center;justify-content:center;font-size:32px">👨🏻</div>
-          </div>
-          <p class="profile-name">Marcus Chen</p>
-          <p class="profile-role">Co-founder, GreenLeap Ventures</p>
-          <p class="profile-quote">"The EKRI Business Model Toolkit transformed how we approached our social enterprise. Within 6 months of applying their framework, we grew our impact reach by 300% and secured our first institutional investment."</p>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="footer-col-title">Quick Links</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="index.html" class="footer-link">→ Home</a></li>
+            <li><a href="about.html" class="footer-link">→ About Us</a></li>
+            <li><a href="research.html" class="footer-link">→ Research</a></li>
+            <li><a href="resources.html" class="footer-link">→ Resources</a></li>
+            <li><a href="news.html" class="footer-link">→ News &amp; Events</a></li>
+            <li><a href="contact.html" class="footer-link">→ Contact</a></li>
+          </ul>
         </div>
-        <div class="profile-card animate-fade-in-up delay-200">
-          <div class="profile-avatar">
-            <div class="img-placeholder gradient-purple" style="display:flex;align-items:center;justify-content:center;font-size:32px">👩🏾</div>
-          </div>
-          <p class="profile-name">Priya Nair</p>
-          <p class="profile-role">Director, Rural Innovators Network</p>
-          <p class="profile-quote">"EKRI connected us with a global network of researchers and changemakers. The mentorship and resources from their community programs literally changed the trajectory of our organization's impact in rural India."</p>
+
+        <!-- Resources -->
+        <div>
+          <h3 class="footer-col-title d-none">Resources</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="resources.html" class="footer-link">→ Research Reports</a></li>
+            <li><a href="resources.html" class="footer-link">→ Policy Briefs</a></li>
+            <li><a href="resources.html" class="footer-link">→ Toolkits</a></li>
+            <li><a href="resources.html" class="footer-link">→ Webinars</a></li>
+            <li><a href="resources.html" class="footer-link">→ Datasets</a></li>
+            <li><a href="news.html" class="footer-link">→ Events Calendar</a></li>
+          </ul>
         </div>
-      </div>
-      <div class="center-cta animate-fade-in-up">
-        <a href="about.html#team" class="btn btn--ghost btn--lg">Meet Our Community</a>
-      </div>
-    </div>
-  </section>
 
-  <!-- ============ NEWS & EVENTS ============ -->
-  <section class="section section--surface" id="news" aria-labelledby="news-heading">
-    <div class="container">
-      <div class="section-header animate-fade-in-up">
-        <span class="section-label">News &amp; Events</span>
-        <h2 class="section-title" id="news-heading">Stay Informed</h2>
-        <p class="section-subtitle">The latest from EKRI — research launches, thought leadership, events, and entrepreneurship sector news.</p>
-      </div>
-      <div class="grid-3">
-        <!-- News Card 1 -->
-        <article class="news-card animate-fade-in-up">
-          <div class="news-card-img">
-            <div class="img-placeholder gradient-research" style="height:100%"></div>
-            <div class="news-date-badge" aria-label="March 15"><div class="day">15</div><div class="month">Mar</div></div>
+        <!-- Contact -->
+        <div>
+          <h3 class="footer-col-title">Contact Us</h3>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">📍</div>
+            <div>220 Laurier Ave West, Suite 800<br />Ottawa, ON K1P 5Z9, Canada</div>
           </div>
-          <div class="news-card-body">
-            <div class="card-meta"><span class="badge badge--blue">Research</span></div>
-            <h3 class="news-card-title">EKRI Releases Landmark Study on Indigenous Entrepreneurship Barriers</h3>
-            <p class="news-card-excerpt">Our latest research unveils systemic gaps in support infrastructure for Indigenous entrepreneurs across Canada and the US, with concrete policy recommendations.</p>
-            <a href="news.html" class="card-link">Read Full Story <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">📧</div>
+            <div><a href="mailto:info@ekri.org" class="footer-link" style="display:inline">info@ekri.org</a></div>
           </div>
-        </article>
-
-        <!-- News Card 2 -->
-        <article class="news-card animate-fade-in-up delay-100">
-          <div class="news-card-img">
-            <div class="img-placeholder gradient-news" style="height:100%"></div>
-            <div class="news-date-badge" aria-label="March 8"><div class="day">08</div><div class="month">Mar</div></div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">📞</div>
+            <div><a href="tel:+16135551234" class="footer-link" style="display:inline">+1 (613) 555-1234</a></div>
           </div>
-          <div class="news-card-body">
-            <div class="card-meta"><span class="badge badge--purple">Event</span></div>
-            <h3 class="news-card-title">Annual Entrepreneurship Summit 2025: Register Now</h3>
-            <p class="news-card-excerpt">Join 500+ entrepreneurs, researchers, and policymakers at our flagship 3-day event featuring keynotes, workshops, and networking sessions.</p>
-            <a href="news.html" class="card-link">Register Now <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">🕐</div>
+            <div>Mon–Fri, 9am–5pm EST</div>
           </div>
-        </article>
-
-        <!-- News Card 3 -->
-        <article class="news-card animate-fade-in-up delay-200">
-          <div class="news-card-img">
-            <div class="img-placeholder gradient-green" style="height:100%"></div>
-            <div class="news-date-badge" aria-label="February 28"><div class="day">28</div><div class="month">Feb</div></div>
-          </div>
-          <div class="news-card-body">
-            <div class="card-meta"><span class="badge badge--green">Partnership</span></div>
-            <h3 class="news-card-title">EKRI Partners with UN Women to Advance Women's Economic Empowerment</h3>
-            <p class="news-card-excerpt">A landmark 3-year partnership will fund field research, training programs, and policy advocacy across 10 developing nations.</p>
-            <a href="news.html" class="card-link">Read Full Story <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></a>
-          </div>
-        </article>
-      </div>
-      <div class="center-cta animate-fade-in-up">
-        <a href="news.html" class="btn btn--outlined btn--lg">View All News &amp; Events</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PARTNERS / SPONSORS ============ -->
-  <section class="section" aria-labelledby="partners-heading">
-    <div class="container">
-      <div class="section-header animate-fade-in-up">
-        <span class="section-label">Partners &amp; Sponsors</span>
-        <h2 class="section-title" id="partners-heading">Organizations That Trust EKRI</h2>
-        <p class="section-subtitle">We collaborate with leading institutions, government bodies, and foundations who share our commitment to entrepreneurship excellence.</p>
-      </div>
-      <div class="grid-4 animate-fade-in-up" style="row-gap:16px;">
-        <div class="partner-logo"><span class="partner-logo-text">🌐 UN WOMEN</span></div>
-        <div class="partner-logo"><span class="partner-logo-text">🏛 WORLD BANK</span></div>
-        <div class="partner-logo"><span class="partner-logo-text">🎓 MIT SLOAN</span></div>
-        <div class="partner-logo"><span class="partner-logo-text">💼 OECD</span></div>
-        <div class="partner-logo"><span class="partner-logo-text">🚀 IFC</span></div>
-        <div class="partner-logo"><span class="partner-logo-text">🏢 IVEY SCHOOL</span></div>
-        <div class="partner-logo"><span class="partner-logo-text">🌱 FUNDACIÓN ACE</span></div>
-        <div class="partner-logo"><span class="partner-logo-text">🔬 KAUFFMAN FND</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ NEWSLETTER ============ -->
-  <section class="newsletter-section section--sm" aria-labelledby="newsletter-heading">
-    <div class="container">
-      <div class="newsletter-inner animate-fade-in-up">
-        <span class="section-label" style="background:rgba(255,255,255,0.15);color:#fff;">Stay Informed</span>
-        <h2 class="newsletter-title" id="newsletter-heading">Get the Latest Research Delivered</h2>
-        <p class="newsletter-subtitle">Join 10,000+ entrepreneurs, researchers, and policymakers who receive EKRI's monthly insights digest.</p>
-        <form class="newsletter-form" aria-label="Newsletter subscription">
-          <input type="email" class="form-input" placeholder="Enter your email address" aria-label="Email address" required/>
-          <button type="submit" class="btn btn--white">Subscribe</button>
-        </form>
-        <p style="font-size:var(--text-xs);color:rgba(255,255,255,0.4);margin-top:16px;">No spam, ever. Unsubscribe at any time. By subscribing you agree to our <a href="#" style="color:rgba(255,255,255,0.6);">Privacy Policy</a>.</p>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<!-- ============ FOOTER ============ -->
-<footer class="footer" role="contentinfo">
-  <div class="container">
-    <div class="footer-grid">
-      <!-- Brand -->
-      <div class="footer-brand">
-        <div class="footer-logo">
-          <div class="footer-logo-mark" aria-hidden="true">EK</div>
-          <span class="footer-logo-text">EKRI</span>
-        </div>
-        <p class="footer-desc">The Entrepreneurship Knowledge &amp; Research Institute is a leading non-profit research organization dedicated to empowering entrepreneurs through evidence-based insights and knowledge.</p>
-        <div class="social-links" aria-label="Social media links">
-          <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
-          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
-          <a href="#" class="social-link" aria-label="Facebook">f</a>
-          <a href="#" class="social-link" aria-label="YouTube">▶</a>
-          <a href="#" class="social-link" aria-label="Instagram">◻</a>
         </div>
       </div>
 
-      <!-- Quick Links -->
-      <div>
-        <h3 class="footer-col-title">Quick Links</h3>
-        <ul class="footer-links" role="list">
-          <li><a href="index.html"    class="footer-link">→ Home</a></li>
-          <li><a href="about.html"    class="footer-link">→ About Us</a></li>
-          <li><a href="research.html" class="footer-link">→ Research</a></li>
-          <li><a href="resources.html"class="footer-link">→ Resources</a></li>
-          <li><a href="news.html"     class="footer-link">→ News &amp; Events</a></li>
-          <li><a href="contact.html"  class="footer-link">→ Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- Resources -->
-      <div>
-        <h3 class="footer-col-title">Resources</h3>
-        <ul class="footer-links" role="list">
-          <li><a href="resources.html" class="footer-link">→ Research Reports</a></li>
-          <li><a href="resources.html" class="footer-link">→ Policy Briefs</a></li>
-          <li><a href="resources.html" class="footer-link">→ Toolkits</a></li>
-          <li><a href="resources.html" class="footer-link">→ Webinars</a></li>
-          <li><a href="resources.html" class="footer-link">→ Datasets</a></li>
-          <li><a href="news.html"      class="footer-link">→ Events Calendar</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact -->
-      <div>
-        <h3 class="footer-col-title">Contact Us</h3>
-        <div class="footer-contact-item">
-          <div class="footer-contact-icon" aria-hidden="true">📍</div>
-          <div>220 Laurier Ave West, Suite 800<br/>Ottawa, ON K1P 5Z9, Canada</div>
-        </div>
-        <div class="footer-contact-item">
-          <div class="footer-contact-icon" aria-hidden="true">📧</div>
-          <div><a href="mailto:info@ekri.org" class="footer-link" style="display:inline">info@ekri.org</a></div>
-        </div>
-        <div class="footer-contact-item">
-          <div class="footer-contact-icon" aria-hidden="true">📞</div>
-          <div><a href="tel:+16135551234" class="footer-link" style="display:inline">+1 (613) 555-1234</a></div>
-        </div>
-        <div class="footer-contact-item">
-          <div class="footer-contact-icon" aria-hidden="true">🕐</div>
-          <div>Mon–Fri, 9am–5pm EST</div>
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="footer-bottom-text">© 2025 Entrepreneurship Knowledge &amp; Research Institute (EKRI). All rights
+          reserved. Registered Non-profit Organization.</p>
+        <div class="footer-bottom-links">
+          <a href="#" class="footer-bottom-link">Privacy Policy</a>
+          <a href="#" class="footer-bottom-link">Terms of Use</a>
+          <a href="#" class="footer-bottom-link">Accessibility</a>
+          <a href="#" class="footer-bottom-link">Sitemap</a>
         </div>
       </div>
     </div>
+  </footer>
 
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      <p class="footer-bottom-text">© 2025 Entrepreneurship Knowledge &amp; Research Institute (EKRI). All rights reserved. Registered Non-profit Organization.</p>
-      <div class="footer-bottom-links">
-        <a href="#" class="footer-bottom-link">Privacy Policy</a>
-        <a href="#" class="footer-bottom-link">Terms of Use</a>
-        <a href="#" class="footer-bottom-link">Accessibility</a>
-        <a href="#" class="footer-bottom-link">Sitemap</a>
-      </div>
-    </div>
-  </div>
-</footer>
+  <!-- Back to Top -->
+  <button id="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
 
-<!-- Back to Top -->
-<button id="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
-
-<script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
+
 </html>
