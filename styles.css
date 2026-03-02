@@ -2837,6 +2837,9 @@ header {
     grid-template-columns: 1fr;
     gap: 28px;
   }
+  .notification-banner{
+    font-size: 9px;
+  }
 
   .footer-bottom {
     flex-direction: column;
