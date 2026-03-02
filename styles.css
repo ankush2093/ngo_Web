@@ -130,7 +130,7 @@ select {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: url("https://wekh.ca/wp-content/uploads/2024/11/WEKHorbsallcolours_1copy4.png");
+  /* background-image: url("https://wekh.ca/wp-content/uploads/2024/11/WEKHorbsallcolours_1copy4.png"); */
   background-repeat: no-repeat;
   background-position: top right;
   background-size: 600px auto;
@@ -1406,6 +1406,92 @@ header {
   border-top: 1px solid rgba(15, 23, 42, 0.06);
   padding-top: 16px;
   margin-top: auto;
+}
+
+/* ============ Mission & Vision Section ============ */
+.mission-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-image-wrapper {
+  position: relative;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mission-image-bg-glow {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(204, 23, 191, 0.1) 0%, transparent 70%);
+  z-index: -1;
+  filter: blur(40px);
+}
+
+.mission-main-img {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 20px 50px rgba(204, 23, 191, 0.2));
+  animation: float 6s ease-in-out infinite;
+  border-radius: 40px;
+}
+
+.purpose-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.purpose-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--color-primary);
+  box-shadow: 0 15px 30px rgba(204, 23, 191, 0.1);
+}
+
+.purpose-icon-wrap {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #CC17BF 0%, #8B5CF6 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 1.5rem;
+  box-shadow: 0 8px 20px rgba(204, 23, 191, 0.3);
+}
+
+.purpose-title {
+  color: #8B5CF6;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.purpose-text {
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@media (max-width: 991px) {
+  .mission-image-wrapper {
+    margin-bottom: 3rem;
+  }
 }
 
 .resource-download-btn {
