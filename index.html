@@ -92,10 +92,10 @@
         <div class="hero-orb hero-orb-2"></div>
       </div>
       <div class="container">
-        <div class="row align-items-center g-4">
-          <div class="col-12 col-md-6">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-9">
             <div class="hero-content">
-              <div class="hero-label animate-fade-in-up" aria-hidden="true">
+              <div class="hero-label animate-fade-in-up" aria-hidden="true" style="margin-inline: auto;">
                 Leading Entrepreneurship Research Since 2009
               </div>
               <h1 class="hero-title animate-fade-in-up delay-100">
@@ -107,7 +107,7 @@
                 evidence-based insights that help entrepreneurs, policymakers, and organizations create lasting economic
                 impact.
               </p>
-              <div class="hero-actions animate-fade-in-up delay-300">
+              <div class="hero-actions animate-fade-in-up delay-300" style="justify-content: center;">
                 <a href="research.html" class="btn btn--primary btn--lg">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                     stroke="currentColor">
@@ -121,16 +121,6 @@
                   Join Our Community
                 </a>
               </div>
-
-
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6">
-            <div class="heroimg_warpper ms-md-auto">
-              <img
-                src="https://moodle.net/.pkg/@moodlenet/ed-resource/public/2023/05/01/12/36/06/199_iStock_Research_methods_.jpg"
-                alt="Hero Image">
             </div>
           </div>
         </div>
@@ -223,7 +213,7 @@
         top: 50%;
         width: 30px;
         height: 2px;
-        background: var(--color-danger);
+        background: var(--color-primary);
       }
 
       /* Title */
@@ -236,11 +226,14 @@
 
       /* Quote Box */
       .Business-quote-box {
-        background: #fff;
+        background: var(--glass-bg);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
         padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        box-shadow: var(--glass-shadow);
         margin-bottom: 25px;
         border: 1px dashed var(--color-primary);
+        border-radius: var(--radius-md);
       }
 
       .Business-author span {
@@ -425,7 +418,7 @@
     <style>
       .research_home_section {
         padding: 40px 0;
-        background: linear-gradient(135deg, #000000e3 0%, #08337770 100%);
+        background: linear-gradient(135deg, #0F172A 0%, #7E22CE 100%);
       }
 
       .research_home_image_card {
@@ -667,12 +660,15 @@
       }
 
       .stats_card_redesign {
-        background: #fff;
+        background: var(--glass-bg);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
         padding: 30px;
         border-radius: 24px;
         max-width: 550px;
         transition: 0.3s ease;
-        box-shadow: var(--shadow-blue);
+        box-shadow: var(--glass-shadow);
+        border: 1px solid var(--glass-border);
       }
 
       /* TOP */
@@ -895,16 +891,13 @@
                   </div>
                 </div>
               </div>
-              <div class="resource-card animate-fade-in-up delay-100">
+              <div class="resource-card animate-fade-in-up">
                 <div class="resource-card-img gradient-research">
-                  <div class="img-placeholder"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                      stroke-width="1.5" stroke="rgba(255,255,255,0.8)">
-                      <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
-                    </svg></div>
+                  <div class="img-placeholder"
+                    style="display:flex;align-items:center;justify-content:center;font-size:40px">🛠️</div>
                 </div>
                 <div class="resource-card-body">
-                  <span class="resource-type-badge badge badge--cyan">🛠 Toolkit</span>
+                  <span class="resource-type-badge badge badge--cyan">Toolkit</span>
                   <h3 class="resource-card-title">Business Model Canvas Toolkit for Social Ventures</h3>
                   <p class="resource-card-desc">Interactive toolkit helping social entrepreneurs design, test, and
                     iterate their business models effectively.</p>
@@ -914,16 +907,13 @@
                   </div>
                 </div>
               </div>
-              <div class="resource-card animate-fade-in-up delay-200">
+              <div class="resource-card animate-fade-in-up delay-100">
                 <div class="resource-card-img gradient-event">
-                  <div class="img-placeholder"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                      stroke-width="1.5" stroke="rgba(255,255,255,0.8)">
-                      <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
-                    </svg></div>
+                  <div class="img-placeholder"
+                    style="display:flex;align-items:center;justify-content:center;font-size:40px">🎬</div>
                 </div>
                 <div class="resource-card-body">
-                  <span class="resource-type-badge badge badge--orange">🎬 Webinar</span>
+                  <span class="resource-type-badge badge badge--orange">Webinar</span>
                   <h3 class="resource-card-title">Navigating Series A Funding in a Tighter Market</h3>
                   <p class="resource-card-desc">On-demand expert panel covering investor expectations, pitch strategies,
                     and term sheet negotiations.</p>
@@ -933,16 +923,13 @@
                   </div>
                 </div>
               </div>
-              <div class="resource-card animate-fade-in-up delay-300">
+              <div class="resource-card animate-fade-in-up delay-200">
                 <div class="resource-card-img gradient-purple">
-                  <div class="img-placeholder"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                      stroke-width="1.5" stroke="rgba(255,255,255,0.8)">
-                      <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 2.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
-                    </svg></div>
+                  <div class="img-placeholder"
+                    style="display:flex;align-items:center;justify-content:center;font-size:40px">📊</div>
                 </div>
                 <div class="resource-card-body">
-                  <span class="resource-type-badge badge badge--purple">📊 Dataset</span>
+                  <span class="resource-type-badge badge badge--purple">Dataset</span>
                   <h3 class="resource-card-title">Global Startup Ecosystems Index 2024</h3>
                   <p class="resource-card-desc">Comprehensive dataset covering 180 startup ecosystems including
                     investment flows, founder demographics, and policy scores.</p>
