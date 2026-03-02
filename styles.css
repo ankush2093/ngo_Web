@@ -130,7 +130,9 @@ select {
   content: "";
   position: fixed;
   inset: 0;
+  background: linear-gradient(135deg, #fffafa 0%, #fdf2fd 50%, #fffafa 100%);
   /* background-image: url("https://wekh.ca/wp-content/uploads/2024/11/WEKHorbsallcolours_1copy4.png"); */
+  /* background-image: url("bgimg.png"); */
   background-repeat: no-repeat;
   background-position: top right;
   background-size: 600px auto;
@@ -2803,9 +2805,7 @@ header {
     --spacing-section: 64px;
   }
 
-  .section {
-    padding-block: 72px;
-  }
+
 
   .section--lg {
     padding-block: 80px;
